@@ -1,6 +1,26 @@
 import React, { useState } from 'react';
 
 export default function App() {
+	//Generates random int from min to max (inclusive). 	
+	//Probably shouldn't hardcode the default parameter as 8
+	function getRandNumInRange(min = 0, max = 8) {
+		let x = Math.floor(Math.random() * (max - min) + min);
+		return x;
+	  }
+	  //Returns a random int corresponding to a question that hasn't been displayed yet.
+	  //If all questions have been displayed, returns (# of questions + 1)
+	  function getRandomQuestion() {
+		if (usedQuestions.length == quiz.length)
+			return quiz.length+1;
+		let x = getRandNumInRange();
+		while(usedQuestions.includes(x))
+			x = getRandNumInRange();
+		const nextUsedQuestions = usedQuestions.slice();
+		nextUsedQuestions.push(x);
+		setUsedQuestions(nextUsedQuestions);
+		return x;
+	  }
+	  
 	const quiz = [
 		{
 			question: 'Which drink has the most caffeine?',
@@ -86,8 +106,9 @@ export default function App() {
 			],
 		},
 	];
-
-	const [currentQuestion, setCurrentQuestion] = useState(0);
+	const [questionNumber, setQuestionNumber] = useState(0);
+	const [currentQuestion, setCurrentQuestion] = useState(getRandNumInRange(0,quiz.length));
+	const [usedQuestions, setUsedQuestions] = useState([currentQuestion.valueOf]);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 
@@ -95,9 +116,9 @@ export default function App() {
 		if (checkCorrect) {
 			setScore(score + 1);
 		}
-
-		const nextQuestion = currentQuestion + 1;
+		const nextQuestion = getRandomQuestion();
 		if (nextQuestion < quiz.length) {
+			setQuestionNumber(questionNumber+1);
 			setCurrentQuestion(nextQuestion);
 		} else {
 			setShowScore(true);
@@ -113,7 +134,7 @@ export default function App() {
 				<>
 					<div className='question-section'>
 						<div className='question-count'>
-							Question {currentQuestion + 1}
+							Question {questionNumber + 1}
 						</div>
 						<div className='question-text'>{quiz[currentQuestion].question}</div>
 					</div>
