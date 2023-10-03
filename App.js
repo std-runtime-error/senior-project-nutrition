@@ -23,7 +23,7 @@ export default function App() {
 	  
 	const quiz = [
 		{
-			question: 'Which drink has the most caffeine?',
+			question: 'Which drink has the most caffeine? Thomas was here!',
 			answerList: [
 				{answer: 'Coke', checkCorrect: false}, //33.3mg
 				{answer: 'Pepsi', checkCorrect: false}, //33.3mg
