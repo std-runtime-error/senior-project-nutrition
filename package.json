@@ -1,5 +1,26 @@
 {
   "dependencies": {
+    "react": "^16.5.2",
+	  "react-dom": "^16.5.2",
     "react-router-dom": "^6.16.0"
-  }
+  },
+  "name": "senior-project-nutrition",
+  "description": "thomas-game-menu",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+
+    "react-scripts": "1.0.7"
+
+  },
+  "scripts": {
+
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test --env=jsdom",
+		"eject": "react-scripts eject"
+
+	},
+  "author": "",
+  "license": "ISC"
 }
