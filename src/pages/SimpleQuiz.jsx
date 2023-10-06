@@ -128,13 +128,12 @@ export default function SimpleQuiz() {
 	return (
 		<div className='simplequiz'>
 			{showScore ? (
-				<div className='score-section'>
-					<div>
+				<div>
+					<div className='score-section'>
 						You scored {score} out of {quiz.length}!
 					</div>
-					<div>
-						<Link to="/">Back to Game Menu</Link>
-					</div>
+					<br />
+					<center><Link to="/">Back to Game Menu</Link></center>
 				</div>
 			) : (
 				<div>
