@@ -24,7 +24,7 @@ export default function SimpleQuiz() {
 	  
 	const quiz = [
 		{
-			question: 'Which drink has the most caffeine? Thomas was here!',
+			question: 'Which drink has the most caffeine?',
 			answerList: [
 				{answer: 'Coke', checkCorrect: false}, //33.3mg
 				{answer: 'Pepsi', checkCorrect: false}, //33.3mg
