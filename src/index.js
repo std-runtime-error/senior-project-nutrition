@@ -9,7 +9,7 @@ import SimpleQuiz from './pages/SimpleQuiz';
 export default function App() { 
 
   return (
-    <div classname="navbar">
+    <div>
       <BrowserRouter>
                   <Routes>         
                   <Route path="/" element={<Layout />}>           
