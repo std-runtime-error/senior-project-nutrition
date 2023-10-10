@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 
 export default function SimpleQuiz() {
-	//Generates random int from min to max (inclusive). 	
+	//Generates random int from min to max (exclusive). 	
 	//Probably shouldn't hardcode the default parameter as 8
-	function getRandNumInRange(min = 0, max = 8) {
+	function getRandNumInRange(min = 0, max = 9) {
 		let x = Math.floor(Math.random() * (max - min) + min);
 		return x;
 	  }
@@ -31,6 +31,7 @@ export default function SimpleQuiz() {
 				{answer: 'Energy drink', checkCorrect: false}, //91.2mg
 				{answer: 'Coffee', checkCorrect: true}, //94.8mg
 			],
+			explanation: 'Placeholder text',
 		},
 
 		{
@@ -41,6 +42,8 @@ export default function SimpleQuiz() {
 				{answer: 'Fat', checkCorrect: false},
 				{answer: 'Sodium', checkCorrect: false},
 			],
+			explanation: 'Placeholder text',
+
 		},
 
 		{
@@ -49,6 +52,8 @@ export default function SimpleQuiz() {
 				{answer: 'Egg', checkCorrect: false},
 				{answer: 'Mayonnaise', checkCorrect: true},
 			],
+			explanation: 'Placeholder text',
+
 		},
 
 		{
@@ -59,6 +64,8 @@ export default function SimpleQuiz() {
 				{answer: 'Alligator', checkCorrect: true}, //46g 
 				{answer: 'Duck', checkCorrect: false}, //19g 
 			],
+			explanation: 'Placeholder text',
+
 		},
 
 		{
@@ -69,6 +76,8 @@ export default function SimpleQuiz() {
 				{answer: 'Lemon', checkCorrect: false}, //28.9kcal
 				{answer: 'Pineapple', checkCorrect: false}, //50kcal
 			],
+			explanation: 'Placeholder text',
+
 		},
 
 		{
@@ -79,6 +88,8 @@ export default function SimpleQuiz() {
 				{answer: 'Coke has more calcisum', checkCorrect: true},
 				{answer: 'Diet coke has more sodium', checkCorrect: false},
 			],
+			explanation: 'Placeholder text',
+
 		},
 
 		{
@@ -87,6 +98,8 @@ export default function SimpleQuiz() {
 				{answer: 'Broccoli', checkCorrect: false},
 				{answer: 'Brussel sprout', checkCorrect: true},
 			],
+			explanation: 'Placeholder text',
+
 		},
 
 		{
@@ -95,6 +108,8 @@ export default function SimpleQuiz() {
 				{answer: 'Wheat', checkCorrect: false},
 				{answer: 'Rice', checkCorrect: true},
 			],
+			explanation: 'Placeholder text',
+
 		},
 
 		{
@@ -105,6 +120,8 @@ export default function SimpleQuiz() {
 				{answer: 'Anchoby', checkCorrect: true},
 				{answer: 'Cheese', checkCorrect: false},
 			],
+			explanation: 'Placeholder text',
+
 		},
 	];
 	const [questionNumber, setQuestionNumber] = useState(0);
@@ -112,15 +129,22 @@ export default function SimpleQuiz() {
 	const [usedQuestions, setUsedQuestions] = useState([currentQuestion.valueOf]);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
+	const [showAnswer, setShowAnswer] = useState(false);
 
 	const handleAnswerOptionClick = (checkCorrect) => {
 		if (checkCorrect) {
 			setScore(score + 1);
 		}
+		setShowAnswer(true)
+	};
+
+	const nextQuestion = () => {
+
 		const nextQuestion = getRandomQuestion();
 		if (nextQuestion < quiz.length) {
 			setQuestionNumber(questionNumber+1);
 			setCurrentQuestion(nextQuestion);
+			setShowAnswer(false);
 		} else {
 			setShowScore(true); 
 		}
@@ -145,11 +169,30 @@ export default function SimpleQuiz() {
 					</div>
 					<div className='answer-section'>
 						{quiz[currentQuestion].answerList.map((answerOption) => (
-							<button onClick={() => handleAnswerOptionClick(answerOption.checkCorrect)}>{answerOption.answer}</button>
-						))}
+							<button 
+							className = {`${
+								showAnswer
+								  ? answerOption.checkCorrect
+									? 'correct-answer'
+									: 'wrong-answer'
+								  : ''
+							  }`}
+							onClick={() => handleAnswerOptionClick(answerOption.checkCorrect)}>{answerOption.answer}</button>
+						)
+						)
+					}
+					{showAnswer &&
+						(<div>
+							<div className='answer-explanation'>
+							{quiz[currentQuestion].explanation}
+							</div>
+							<button onClick={() => nextQuestion()}>Next
+							</button>
+						</div>)
+					}
 					</div>
 				</div>
-			)}
+				)}
 		</div>
 	);
 }

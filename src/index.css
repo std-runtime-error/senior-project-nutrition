@@ -81,6 +81,19 @@ button {
   margin-bottom: 5px;
 }
 
+.correct-answer {
+background-color:forestgreen;
+}
+
+.wrong-answer {
+  background-color:darkred;
+}
+
+.answer-explanation {
+    background-color:#525252;
+    margin: 5px;
+}
+
 .NavigationBar {
   position: fixed;
   left: 0;
