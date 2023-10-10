@@ -8,7 +8,7 @@ body {
 }
 
 * {
-  font-family: "Verdana", cursive, sans-serif;
+  font-family: "Arial", cursive, sans-serif;
   color: #15001d;
 }
 
@@ -79,13 +79,16 @@ button {
   border: 3px solid #a5a5a5;
   cursor: pointer;
   margin-bottom: 5px;
+  box-shadow: 5px 5px 3px #00000042;
 }
 
 .NavigationBar {
   position: fixed;
   left: 0;
   top: 0;
-  width: 200px;
+  width: 10vw;
+  max-width: 200px;
+  min-width: 100px;
   height: 100%;
   background-color: #ffffff;
   border-radius: 0px;
@@ -98,31 +101,58 @@ button {
 
 .GameMenu {
   background-color: #ffffff;
-  width: 700px;
-  min-height: 300px;
+  width: 60vw;
+  min-height: 60vh;
   height: min-content;
   border-radius: 15px;
   padding: 20px;
   border: 3px solid #525252;
   align-items: left;
+  font-size: 30px;
+  box-shadow: 10px 10px 3px #00000042;
 }
 
 .GameMenuButton{
-  min-height: 50px;
-  min-width: 300px;
-  font-size: 16px;
+  height: 3vh;
+  width: 20vw;
+  font-size: 25px;
+  vertical-align: middle;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
   color: #000000;
   background-color: #baa8bd;
   border-radius: 15px;
-  padding: 5px;
-  justify-content: center;
-  border: 3px solid #a5a5a5;
+  padding: 50px;
+  border: 3px solid #888888;
   margin-bottom: 5px;
+  box-shadow: 5px 5px 3px #00000042;
+  transition: 0.1s;
+
+  &:hover,
+  &:focus { 
+    border-color: #fa02fe;
+    font-size:30px;
+    box-shadow: 7px 7px 7px #000000a0;
+  }
 }
 
 .GameMenuList {
   justify-content: center;
   display: grid;
   grid-template-columns: auto auto auto;
-  grid-gap: 5px;
+  grid-gap: 20px;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
