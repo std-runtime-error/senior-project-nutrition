@@ -104,7 +104,25 @@ button {
   border-radius: 15px;
   padding: 20px;
   border: 3px solid #525252;
-  display: flex;
-  flex-flow: column;
   align-items: left;
+}
+
+.GameMenuButton{
+  min-height: 50px;
+  min-width: 300px;
+  font-size: 16px;
+  color: #000000;
+  background-color: #baa8bd;
+  border-radius: 15px;
+  padding: 5px;
+  justify-content: center;
+  border: 3px solid #a5a5a5;
+  margin-bottom: 5px;
+}
+
+.GameMenuList {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 5px;
 }
