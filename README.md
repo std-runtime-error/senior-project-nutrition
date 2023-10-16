@@ -7,3 +7,5 @@
 # run the command npm install in senior-project-nutrition directory
 
 # then use npm start to run
+
+# circleci test commit 2
