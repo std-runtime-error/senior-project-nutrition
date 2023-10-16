@@ -22,7 +22,7 @@ body {
 }
 
 /* setting for the quiz box */
-.simplequiz {
+.app {
   background-color: #ffffff;
   width: 550px;
   min-height: 200px;
@@ -65,9 +65,22 @@ body {
   justify-content : center;
 }
 
+.inputBox {
+  text-align: center;
+}
+.showInput {
+  text-align: center;
+}
+.enter-button {
+  text-align: center;
+}
+.print-image {
+  text-align: center;
+}
+
 /* Setting for answers' button */
 button {
-  width: 103%;
+  width: 100%;
   font-size: 16px;
   color: #000000;
   background-color: #baa8bd;
@@ -79,45 +92,4 @@ button {
   border: 3px solid #a5a5a5;
   cursor: pointer;
   margin-bottom: 5px;
-}
-
-.correct-answer {
-background-color:forestgreen;
-}
-
-.wrong-answer {
-  background-color:darkred;
-}
-
-.answer-explanation {
-    background-color:#525252;
-    margin: 5px;
-}
-
-.NavigationBar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 200px;
-  height: 100%;
-  background-color: #ffffff;
-  border-radius: 0px;
-  padding: 10px;
-  border: 3px solid #525252;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-}
-
-.GameMenu {
-  background-color: #ffffff;
-  width: 700px;
-  min-height: 300px;
-  height: min-content;
-  border-radius: 15px;
-  padding: 20px;
-  border: 3px solid #525252;
-  display: flex;
-  flex-flow: column;
-  align-items: left;
 }
