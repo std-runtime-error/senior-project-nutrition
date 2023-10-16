@@ -62,6 +62,7 @@ body {
   border: 3px solid #525252;
   display: flex;
   justify-content: space-evenly;
+  box-shadow: 10px 10px 3px #1c1f1cb8;
 
 }
 
