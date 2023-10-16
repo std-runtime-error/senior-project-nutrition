@@ -52,20 +52,23 @@ body {
 /* setting for the quiz box */
 .simplequiz {
   background-color: #ffffff;
-  width: 550px;
+  min-width: 550px;
   min-height: 200px;
   height: min-content;
   border-radius: 15px;
-  padding: 20px;
+  padding: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
   border: 3px solid #525252;
   display: flex;
   justify-content: space-evenly;
+
 }
 
 .score-section {
   white-space: pre-wrap;
   display: flex;
-  font-size: 24px;
+  font-size: 36px;
   align-items: center;
 }
 
@@ -76,6 +79,7 @@ body {
 
 .question-count {
   margin-bottom: 20px;
+  font-size:20px;
 }
 
 .question-count span {
@@ -84,10 +88,12 @@ body {
 
 .question-text {
   margin-bottom: 12px;
+  font-size:25px;
+
 }
 
 .answer-section {
-  width: 100%;
+  width: 97%;
   display: flex;
   flex-direction: column;
   justify-content : center;
@@ -96,18 +102,24 @@ body {
 /* Setting for answers' button */
 button {
   width: 103%;
-  font-size: 16px;
+  font-size: 20px;
   color: #000000;
-  background-color: #baa8bd;
+  background-color: #c1d3c2;
   border-radius: 15px;
   display: flex;
   padding: 5px;
   justify-content: center;
   align-items: center;
-  border: 3px solid #a5a5a5;
+  border: 3px solid #56695b;
   cursor: pointer;
   margin-bottom: 5px;
   box-shadow: 5px 5px 3px #00000042;
+  transition:0.05s;
+
+  &:hover { 
+    border: 3px solid #39bb18;
+    box-shadow: 5px 5px 3px #000000a0;
+  }
 }
 
 .NavigationBar {
