@@ -1,15 +1,4 @@
 /node_modules
 key.pub
 key
-build/asset-manifest.json
-build/favicon.ico
-build/index.html
-build/logo192.png
-build/logo512.png
-build/manifest.json
-build/robots.txt
-build/service-worker.js
-build/static/css/main.1de96e22.css
-build/static/css/main.1de96e22.css.map
-build/static/js/main.b2745f8d.js.map
-build/static/js/main.b2745f8d.js
+/build
