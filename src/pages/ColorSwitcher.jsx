@@ -12,8 +12,9 @@ const ColorOptionA = () => {
     document.documentElement.style.setProperty("--buttonBackground", "#c1d3c2");
     document.documentElement.style.setProperty("--buttonBorder", "#56695b");
     document.documentElement.style.setProperty("--buttonHighlight", "#39bb18");
-    document.documentElement.style.setProperty("--correctAnswer", "#6de198");
-    document.documentElement.style.setProperty("--incorrectAnswer", "#bc6262");
+    document.documentElement.style.setProperty("--correctAnswer", "#8ad5a5");
+    document.documentElement.style.setProperty("--incorrectAnswer", "#d29e9e");
+    document.documentElement.style.setProperty("--accent", "#c1d3c2");
 
 };
 const ColorOptionB = () => {
@@ -30,6 +31,7 @@ const ColorOptionB = () => {
     document.documentElement.style.setProperty("--buttonHighlight", "#ffffff");
     document.documentElement.style.setProperty("--correctAnswer", "#287746");
     document.documentElement.style.setProperty("--incorrectAnswer", "#771d1d");
+    document.documentElement.style.setProperty("--accent", "white");
 };
 const ColorOptionC = () => {
     document.documentElement.style.setProperty("--screenBackground1", "grey");
@@ -45,6 +47,7 @@ const ColorOptionC = () => {
     document.documentElement.style.setProperty("--buttonHighlight", "yellow");
     document.documentElement.style.setProperty("--correctAnswer", "yellow");
     document.documentElement.style.setProperty("--incorrectAnswer", "grey");
+    document.documentElement.style.setProperty("--accent", "black");
 };
 
 function ColorSwitcher() {  

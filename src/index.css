@@ -14,8 +14,8 @@
   --buttonBorder: #56695b;
   --buttonHighlight: #39bb18;
 
-  --correctAnswer: #6de198;
-  --incorrectAnswer: #bc6262;
+  --correctAnswer: #8ad5a5;
+  --incorrectAnswer: #d29e9e;
   --accent: #c1d3c2;
 
 }
@@ -85,7 +85,7 @@ body {
   border: 3px solid var(--windowBorder);
   display: flex;
   justify-content: space-evenly;
-  box-shadow: 10px 10px 3px #1c1f1cb8;
+  box-shadow: 10px 10px 3px #1c1c1cb8;
 
 }
 
@@ -223,7 +223,7 @@ background-color: var(--correctAnswer);
   border: 3px solid var(--windowBorder);
   align-items: left;
   font-size: 30px;
-  box-shadow: 15px 15px 3px #1c1f1cb8;
+  box-shadow: 15px 15px 3px #1c1c1cb8;
 }
 
 .GameMenuButton{
