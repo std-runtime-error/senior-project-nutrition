@@ -25,7 +25,11 @@ export default function App() {
 
 	const clickEnter = () => {
 		//Set the 5% margin
-		if ((inputText <= estimations[currentQuestion].answer * 1.05) || inputText >= (estimations[currentQuestion].answer * 0.95)) {
+		let marginOfError = 0.05;
+		let lowerVal = estimations[currentQuestion].answer * (1-marginOfError);
+		let upperVal = estimations[currentQuestion].answer * (1+marginOfError);
+
+		if (inputText >= lowerVal && inputText <= upperVal) {
 			setScore(score + 1);
 		}
 		const nextQuestion = currentQuestion + 1;
