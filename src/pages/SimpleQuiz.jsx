@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import Progressbar from './Progress_bar'; 
+
 
 export default function SimpleQuiz() {
 	//Generates random int from min to max (exclusive). 	
@@ -129,6 +131,7 @@ export default function SimpleQuiz() {
 	const [usedQuestions, setUsedQuestions] = useState([currentQuestion.valueOf]);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
+	const [progressPercent, setProgressPercent] = useState(0);
 	const [showAnswer, setShowAnswer] = useState(false);
 
 	const handleAnswerOptionClick = (checkCorrect) => {
@@ -144,6 +147,7 @@ export default function SimpleQuiz() {
 		if (nextQuestion < quiz.length) {
 			setQuestionNumber(questionNumber+1);
 			setCurrentQuestion(nextQuestion);
+			setProgressPercent(((questionNumber+1)/quiz.length)*100);
 			setShowAnswer(false);
 		} else {
 			setShowScore(true); 
@@ -153,6 +157,7 @@ export default function SimpleQuiz() {
 		<div className='simplequiz'>
 			{showScore ? (
 				<div>
+					<Progressbar className= 'question-progress-bar' progress={100} /> 
 					<div className='score-section'>
 						You scored {score} out of {quiz.length}!
 					</div>
@@ -162,6 +167,7 @@ export default function SimpleQuiz() {
 			) : (
 				<div>
 					<div className='question-section'>
+					<Progressbar className= 'question-progress-bar' progress={progressPercent} /> 
 						<div className='question-count'>
 							Question {questionNumber + 1}
 						</div>
