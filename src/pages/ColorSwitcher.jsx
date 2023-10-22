@@ -54,7 +54,7 @@ function ColorSwitcher() {
 
     return (
     <div className="ColorSwitcher">
-        <p><i class="fa-solid fa-palette fa-sm"></i>Color Switcher</p>
+        <p><i class="fa-solid fa-palette fa-sm"></i>&nbsp;Color Switcher</p>
         <button onClick={() => ColorOptionA()}>Original</button>
         <button onClick={() => ColorOptionB()}>Dark</button>
         <button onClick={() => ColorOptionC()}>High Contrast</button>
