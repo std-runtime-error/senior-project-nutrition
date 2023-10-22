@@ -33,7 +33,7 @@ export default function SimpleQuiz() {
 				{answer: 'Energy drink', checkCorrect: false}, //91.2mg
 				{answer: 'Coffee', checkCorrect: true}, //94.8mg
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Placeholder text 1',
 		},
 
 		{
@@ -44,7 +44,7 @@ export default function SimpleQuiz() {
 				{answer: 'Fat', checkCorrect: false},
 				{answer: 'Sodium', checkCorrect: false},
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Placeholder text 2',
 
 		},
 
@@ -54,7 +54,7 @@ export default function SimpleQuiz() {
 				{answer: 'Egg', checkCorrect: false},
 				{answer: 'Mayonnaise', checkCorrect: true},
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Placeholder text 3',
 
 		},
 
@@ -66,7 +66,7 @@ export default function SimpleQuiz() {
 				{answer: 'Alligator', checkCorrect: true}, //46g 
 				{answer: 'Duck', checkCorrect: false}, //19g 
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Placeholder text 4',
 
 		},
 
@@ -78,7 +78,7 @@ export default function SimpleQuiz() {
 				{answer: 'Lemon', checkCorrect: false}, //28.9kcal
 				{answer: 'Pineapple', checkCorrect: false}, //50kcal
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Placeholder text 5',
 
 		},
 
@@ -90,7 +90,7 @@ export default function SimpleQuiz() {
 				{answer: 'Coke has more calcisum', checkCorrect: true},
 				{answer: 'Diet coke has more sodium', checkCorrect: false},
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Placeholder text 6',
 
 		},
 
@@ -100,7 +100,7 @@ export default function SimpleQuiz() {
 				{answer: 'Broccoli', checkCorrect: false},
 				{answer: 'Brussel sprout', checkCorrect: true},
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Placeholder text 7',
 
 		},
 
@@ -110,7 +110,7 @@ export default function SimpleQuiz() {
 				{answer: 'Wheat', checkCorrect: false},
 				{answer: 'Rice', checkCorrect: true},
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Placeholder text 8',
 
 		},
 
@@ -122,7 +122,7 @@ export default function SimpleQuiz() {
 				{answer: 'Anchoby', checkCorrect: true},
 				{answer: 'Cheese', checkCorrect: false},
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Placeholder text 9',
 
 		},
 	];
@@ -138,7 +138,9 @@ export default function SimpleQuiz() {
 		if (checkCorrect) {
 			setScore(score + 1);
 		}
-		setShowAnswer(true)
+		setShowAnswer(true);
+		document.documentElement.style.setProperty("--explanationTransition", "0.7s");
+		document.documentElement.style.setProperty("--explanationOpacity", "1");
 	};
 
 	const nextQuestion = () => {
@@ -152,53 +154,59 @@ export default function SimpleQuiz() {
 		} else {
 			setShowScore(true); 
 		}
+		document.documentElement.style.setProperty("--explanationTransition", "0s");
+		document.documentElement.style.setProperty("--explanationOpacity", "0");
 	};
 	return (
-		<div className='simplequiz'>
-			{showScore ? (
-				<div>
-					<Progressbar className= 'question-progress-bar' progress={100} /> 
-					<div className='score-section'>
-						You scored {score} out of {quiz.length}!
-					</div>
-					<br />
-					<center><Link to="/">Back to Game Menu</Link></center>
-				</div>
-			) : (
-				<div>
-					<div className='question-section'>
-					<Progressbar className= 'question-progress-bar' progress={progressPercent} /> 
-						<div className='question-count'>
-							Question {questionNumber + 1}
+		<div>
+			<div className='simplequiz'>
+				{showScore ? (
+					<div>
+						<Progressbar className= 'question-progress-bar' progress={100} /> 
+						<div className='score-section'>
+							You scored {score} out of {quiz.length}!
 						</div>
-						<div className='question-text'>{quiz[currentQuestion].question}</div>
+						<br />
+						<center><Link to="/">Back to Game Menu</Link></center>
 					</div>
-					<div className='answer-section'>
-						{quiz[currentQuestion].answerList.map((answerOption) => (
-							<button 
-							className = {`${
-								showAnswer
-								  ? answerOption.checkCorrect
-									? 'correct-answer'
-									: 'wrong-answer'
-								  : ''
-							  }`}
-							onClick={() => handleAnswerOptionClick(answerOption.checkCorrect)}>{answerOption.answer}</button>
-						)
-						)
-					}
-					{showAnswer &&
-						(<div>
-							<div className='answer-explanation'>
-							{quiz[currentQuestion].explanation}
+				) : (
+					<div>
+						<div className='question-section'>
+						<Progressbar className= 'question-progress-bar' progress={progressPercent} /> 
+							<div className='question-count'>
+								Question {questionNumber + 1}
 							</div>
-							<button onClick={() => nextQuestion()}>Next
-							</button>
-						</div>)
-					}
+							<div className='question-text'>{quiz[currentQuestion].question}</div>
+						</div>
+						<div className='answer-section'>
+							{quiz[currentQuestion].answerList.map((answerOption) => (
+								<button 
+								className = {`${
+									showAnswer
+									? answerOption.checkCorrect
+										? 'correct-answer'
+										: 'wrong-answer'
+									: ''
+								}`}
+								onClick={() => handleAnswerOptionClick(answerOption.checkCorrect)}>{answerOption.answer}</button>
+							)
+							)
+						}
+						{showAnswer &&
+							(<div>
+								<br/>
+								<button onClick={() => nextQuestion()}>Next
+								</button>
+							</div>)
+						}
+						</div>
+						<div className='answer-explanation'>
+							<h3><i class="fa-solid fa-circle-info fa-xl"></i>&nbsp;&nbsp;More Info:</h3>
+							{quiz[currentQuestion].explanation}
+						</div>
 					</div>
-				</div>
-				)}
+					)}
+			</div>
 		</div>
 	);
 }

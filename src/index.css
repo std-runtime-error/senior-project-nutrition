@@ -1,4 +1,6 @@
 :root{
+
+  /* Color Variables */
   --screenBackground1: #6b796c;
   --screenBackground2: #525e52;
   --screenBackground3: #475347;
@@ -17,6 +19,10 @@
   --correctAnswer: #8ad5a5;
   --incorrectAnswer: #d29e9e;
   --accent: #c1d3c2;
+
+  /* Opacity Variables */
+  --explanationOpacity: 0;
+  --explanationTransition: 0.7s;
 
 }
 
@@ -158,8 +164,25 @@ background-color: var(--correctAnswer);
 }
 
 .answer-explanation {
-    background-color:#525252;
-    margin: 5px;
+  opacity: var(--explanationOpacity);
+  transition: var(--explanationTransition);
+
+  width: 300px;
+
+  background-color: var(--windowBackground);
+  border-radius: 15px;
+  margin-top: 5px;
+  padding: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border: 3px solid var(--windowBorder);
+
+  justify-content: space-evenly;
+  box-shadow: 10px 10px 3px #1c1c1cb8;
+  position: absolute;
+  right: calc(50vw - 800px);
+  top: calc(50vh - 160px);
+  margin-right: 0;
 }
 
 .NavigationBar {
