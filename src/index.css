@@ -10,10 +10,13 @@
 
   --textColor: #15001d;
 
-
   --buttonBackground: #c1d3c2;
   --buttonBorder: #56695b;
   --buttonHighlight: #39bb18;
+
+  --correctAnswer: #6de198;
+  --incorrectAnswer: #bc6262;
+  --accent: #c1d3c2;
 
 }
 
@@ -147,11 +150,11 @@ button {
 }
 
 .correct-answer {
-background-color:forestgreen;
+background-color: var(--correctAnswer);
 }
 
 .wrong-answer {
-  background-color:darkred;
+  background-color: var(--incorrectAnswer);
 }
 
 .answer-explanation {
@@ -177,7 +180,7 @@ background-color:forestgreen;
   display: flex;
   flex-flow: column;
   align-items: center;
-  transition: 0.2s;
+  transition: 0.5s;
 }
 .NavigationBar:hover{ 
   left: 0px;
@@ -189,6 +192,7 @@ background-color:forestgreen;
 
 .NavigationBar:hover > .NavigationIcon{
   opacity: 0;
+  left: 180px;
 }
 .NavigationBar:hover > .NavigationContents{
   opacity: 1;
@@ -196,7 +200,7 @@ background-color:forestgreen;
 
 .NavigationContents{
   opacity: 0;
-  transition:0.15s;
+  transition:0.3s;
 }
 .NavigationIcon{
   opacity: 1;
@@ -206,7 +210,7 @@ background-color:forestgreen;
   z-index: 1;
   top: 50%;
   left: 170px;
-  transition:0.2s;
+  transition:0.4s;
 }
 
 .GameMenu {
@@ -258,7 +262,13 @@ background-color:forestgreen;
 }
 
 .ColorSwitcher{
+  font-weight: bold;
   display: flex;
-  border: 2px solid var(--windowBorder);
-  border-radius: 5px;
+  flex-flow: column;
+  align-content: center;
+  align-items: center;
+  border: 3px solid var(--windowBorder);
+  padding:5px;
+  border-radius: 15px;
+  margin-top: 50px;
 }
