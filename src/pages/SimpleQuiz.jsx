@@ -33,7 +33,7 @@ export default function SimpleQuiz() {
 				{answer: 'Energy drink', checkCorrect: false}, //91.2mg
 				{answer: 'Coffee', checkCorrect: true}, //94.8mg
 			],
-			explanation: 'Placeholder text 1',
+			explanation: 'Placeholder text',
 		},
 
 		{
@@ -44,7 +44,7 @@ export default function SimpleQuiz() {
 				{answer: 'Fat', checkCorrect: false},
 				{answer: 'Sodium', checkCorrect: false},
 			],
-			explanation: 'Placeholder text 2',
+			explanation: 'Placeholder text',
 
 		},
 
@@ -54,7 +54,7 @@ export default function SimpleQuiz() {
 				{answer: 'Egg', checkCorrect: false},
 				{answer: 'Mayonnaise', checkCorrect: true},
 			],
-			explanation: 'Placeholder text 3',
+			explanation: 'Placeholder text',
 
 		},
 
@@ -66,7 +66,7 @@ export default function SimpleQuiz() {
 				{answer: 'Alligator', checkCorrect: true}, //46g 
 				{answer: 'Duck', checkCorrect: false}, //19g 
 			],
-			explanation: 'Placeholder text 4',
+			explanation: 'Placeholder text',
 
 		},
 
@@ -78,7 +78,7 @@ export default function SimpleQuiz() {
 				{answer: 'Lemon', checkCorrect: false}, //28.9kcal
 				{answer: 'Pineapple', checkCorrect: false}, //50kcal
 			],
-			explanation: 'Placeholder text 5',
+			explanation: 'Placeholder text',
 
 		},
 
@@ -90,7 +90,7 @@ export default function SimpleQuiz() {
 				{answer: 'Coke has more calcisum', checkCorrect: true},
 				{answer: 'Diet coke has more sodium', checkCorrect: false},
 			],
-			explanation: 'Placeholder text 6',
+			explanation: 'Placeholder text',
 
 		},
 
@@ -100,7 +100,7 @@ export default function SimpleQuiz() {
 				{answer: 'Broccoli', checkCorrect: false},
 				{answer: 'Brussel sprout', checkCorrect: true},
 			],
-			explanation: 'Placeholder text 7',
+			explanation: 'Placeholder text',
 
 		},
 
@@ -110,7 +110,7 @@ export default function SimpleQuiz() {
 				{answer: 'Wheat', checkCorrect: false},
 				{answer: 'Rice', checkCorrect: true},
 			],
-			explanation: 'Placeholder text 8',
+			explanation: 'Placeholder text',
 
 		},
 
@@ -122,7 +122,7 @@ export default function SimpleQuiz() {
 				{answer: 'Anchoby', checkCorrect: true},
 				{answer: 'Cheese', checkCorrect: false},
 			],
-			explanation: 'Placeholder text 9',
+			explanation: 'Placeholder text',
 
 		},
 	];
