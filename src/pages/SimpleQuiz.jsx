@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import Progressbar from './Progress_bar'; 
+
 
 export default function SimpleQuiz() {
 	//Generates random int from min to max (exclusive). 	
@@ -31,7 +33,7 @@ export default function SimpleQuiz() {
 				{answer: 'Energy drink', checkCorrect: false}, //91.2mg
 				{answer: 'Coffee', checkCorrect: true}, //94.8mg
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Coffee has a surprisingly high amount of caffeine (~100mg). This is slightly more most energy drinks (~90mg) and over 3x as much as Coke/Pepsi!(30mg) ',
 		},
 
 		{
@@ -42,7 +44,7 @@ export default function SimpleQuiz() {
 				{answer: 'Fat', checkCorrect: false},
 				{answer: 'Sodium', checkCorrect: false},
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Oranges contain 40mg of calcium! (6% of your daily needs). This is almost 4x more than an apple!',
 
 		},
 
@@ -52,75 +54,76 @@ export default function SimpleQuiz() {
 				{answer: 'Egg', checkCorrect: false},
 				{answer: 'Mayonnaise', checkCorrect: true},
 			],
-			explanation: 'Placeholder text',
+			explanation: 'A single tablespoon of mayo contains a whopping 10g of fat and 100 calories! This is nearly 1/5 for most daily recommended amount of fat!',
 
 		},
 
 		{
 			question: 'Which meat has the most protein?',
 			answerList: [
-				{answer: 'Pork', checkCorrect: false}, //27g 
-				{answer: 'Beef', checkCorrect: false}, //26g 
-				{answer: 'Alligator', checkCorrect: true}, //46g 
-				{answer: 'Duck', checkCorrect: false}, //19g 
+				{answer: 'Pork', checkCorrect: false}, //27g  23g /3  oz
+				{answer: 'Beef', checkCorrect: false}, //26g  22g g / 3 oz
+				//{answer: 'Alligator', checkCorrect: true}, //46g 
+				{answer: 'Chicken', checkCorrect: false}, // 23g / 3 oz
+				{answer: 'Soybeans', checkCorrect: true}, // 31 g / 3oz
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Soybeans contain 31 g of protein per 3 oz serving, the other meats contain about 23g for the same amount!',
 
 		},
 
 		{
 			question: 'Which of the following fruits has the lowest calories?',
 			answerList: [
-				{answer: 'Strawberry', checkCorrect: true}, //27kcal
-				{answer: 'Watermelon', checkCorrect: false}, //30.4kcal
-				{answer: 'Lemon', checkCorrect: false}, //28.9kcal
-				{answer: 'Pineapple', checkCorrect: false}, //50kcal
+				{answer: 'Strawberry', checkCorrect: true}, // 49 calories / cup
+				{answer: 'Watermelon', checkCorrect: false}, // 47
+				{answer: 'Lemon', checkCorrect: false}, // 61
+				{answer: 'Pineapple', checkCorrect: false}, //82
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Pineapple has the most calories at 82 cals / cup! For comparison, watermelon has roughly half that at 47.',
 
 		},
 
 		{
-			question: 'What is incorrect about coke and diet coke?',
+			question: 'Which statement is incorrect about coke and diet coke?',
 			answerList: [
 				{answer: 'Coke has more sugar', checkCorrect: false},
+				{answer: 'Coke has more calcium', checkCorrect: true},
 				{answer: 'Diet coke has more caffeine', checkCorrect: false},
-				{answer: 'Coke has more calcisum', checkCorrect: true},
 				{answer: 'Diet coke has more sodium', checkCorrect: false},
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Diet coke has more caffeine and sodium compared to regular Coke. Also, it contains no sugar since it uses an artifical sweetner called aspartame. However, neither contain any calcium',
 
 		},
 
 		{
 			question: 'What food has more iron?',
 			answerList: [
-				{answer: 'Broccoli', checkCorrect: false},
-				{answer: 'Brussel sprout', checkCorrect: true},
+				{answer: 'Broccoli', checkCorrect: false}, // 0.7mg / 1 cup
+				{answer: 'Brussel sprout', checkCorrect: true}, //1.23 
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Brussel sprouts contain nearly double at 1.25mg / cup!',
 
 		},
 
 		{
-			question: 'Which has more carbohydrate?',
+			question: 'Which has more carbs?',
 			answerList: [
-				{answer: 'Wheat', checkCorrect: false},
-				{answer: 'Rice', checkCorrect: true},
+				{answer: 'Wheat', checkCorrect: false}, // 17 g
+				{answer: 'Rice', checkCorrect: true}, //45 g per cup
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Rice has significantly more carbs at 45g per cup compared to 17 for the same amount of wheat.',
 
 		},
 
 		{
 			question: 'Which food has the most calcium?',
 			answerList: [
-				{answer: 'Milk', checkCorrect: false},
-				{answer: 'Spinach', checkCorrect: false},
-				{answer: 'Anchoby', checkCorrect: true},
-				{answer: 'Cheese', checkCorrect: false},
+				{answer: 'Milk', checkCorrect: false}, // 305 mg per cup
+				{answer: 'Spinach', checkCorrect: false}, //30 mg per cup
+				{answer: 'Oranges', checkCorrect: false}, // 72 mg per cup
+				{answer: 'Bread', checkCorrect: true}, // 78 mg per slice
 			],
-			explanation: 'Placeholder text',
+			explanation: 'Milk has by far the most calcium at 305 mg per cup. The next closest is bread at 78 mg per slice.',
 
 		},
 	];
@@ -129,6 +132,7 @@ export default function SimpleQuiz() {
 	const [usedQuestions, setUsedQuestions] = useState([currentQuestion.valueOf]);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
+	const [progressPercent, setProgressPercent] = useState(0);
 	const [showAnswer, setShowAnswer] = useState(false);
 
 	const handleAnswerOptionClick = (checkCorrect) => {
@@ -144,6 +148,7 @@ export default function SimpleQuiz() {
 		if (nextQuestion < quiz.length) {
 			setQuestionNumber(questionNumber+1);
 			setCurrentQuestion(nextQuestion);
+			setProgressPercent(((questionNumber+1)/quiz.length)*100);
 			setShowAnswer(false);
 		} else {
 			setShowScore(true); 
@@ -153,6 +158,7 @@ export default function SimpleQuiz() {
 		<div className='simplequiz'>
 			{showScore ? (
 				<div>
+					<Progressbar className= 'question-progress-bar' progress={100} /> 
 					<div className='score-section'>
 						You scored {score} out of {quiz.length}!
 					</div>
@@ -162,6 +168,7 @@ export default function SimpleQuiz() {
 			) : (
 				<div>
 					<div className='question-section'>
+					<Progressbar className= 'question-progress-bar' progress={progressPercent} /> 
 						<div className='question-count'>
 							Question {questionNumber + 1}
 						</div>

@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 
 function Home(){ 
         return (
         <div className='GameMenu'>
-                <h1 align="center" >Game Menu Page</h1>
-                <Link to="/SimpleQuiz">Simple Quiz Game</Link> <br />
-                <Link to="/">Another Game</Link> <br />
-                <Link to="/">Another Game</Link> <br />
-                <Link to="/">Just Tons of Games</Link> <br />
+                <h1 align="center">
+                        <i class="fa-solid fa-chess"></i>
+                        <br/>
+                        Game Menu</h1>
+                <div className='GameMenuList'>
+                        <Link to="/SimpleQuiz" className='GameMenuButton'>Simple Quiz Game&nbsp;<i class="fa-solid fa-arrow-right fa-2xl"></i></Link>
+                        <Link to="/" className='GameMenuButton'><em>Coming Soon!</em></Link><br/>
+                        <Link to="/" className='GameMenuButton'><em>Coming Soon!</em></Link>
+                        <Link to="/" className='GameMenuButton'><em>Coming Soon!</em></Link>
+                </div>
         </div>
         ); 
 } 
