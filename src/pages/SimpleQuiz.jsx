@@ -127,6 +127,7 @@ export default function SimpleQuiz() {
 
 		},
 	];
+	const [selectedAnswer, setSelectedAnswer] = useState(null);
 	const [questionNumber, setQuestionNumber] = useState(0);
 	const [currentQuestion, setCurrentQuestion] = useState(getRandNumInRange(0,quiz.length));
 	const [usedQuestions, setUsedQuestions] = useState([currentQuestion.valueOf]);
@@ -135,11 +136,12 @@ export default function SimpleQuiz() {
 	const [progressPercent, setProgressPercent] = useState(0);
 	const [showAnswer, setShowAnswer] = useState(false);
 
-	const handleAnswerOptionClick = (checkCorrect) => {
+	const handleAnswerOptionClick = (checkCorrect, currSelectedAnswer) => {
 		if (checkCorrect) {
 			setScore(score + 1);
 		}
 		setShowAnswer(true);
+		setSelectedAnswer(currSelectedAnswer);
 		document.documentElement.style.setProperty("--explanationTransition", "0.7s");
 		document.documentElement.style.setProperty("--explanationOpacity", "1");
 	};
@@ -152,6 +154,7 @@ export default function SimpleQuiz() {
 			setCurrentQuestion(nextQuestion);
 			setProgressPercent(((questionNumber+1)/quiz.length)*100);
 			setShowAnswer(false);
+			setSelectedAnswer(null);
 		} else {
 			setShowScore(true); 
 		}
@@ -186,10 +189,12 @@ export default function SimpleQuiz() {
 									showAnswer
 									? answerOption.checkCorrect
 										? 'correct-answer'
-										: 'wrong-answer'
+										: showAnswer && (answerOption.answer === selectedAnswer) ?
+										 'wrong-answer'
+								 	 : ''
 									: ''
 								}`}
-								onClick={() => handleAnswerOptionClick(answerOption.checkCorrect)}>{answerOption.answer}</button>
+								onClick={() => handleAnswerOptionClick(answerOption.checkCorrect, answerOption.answer)}>{answerOption.answer}</button>
 							)
 							)
 						}
