@@ -139,7 +139,9 @@ export default function SimpleQuiz() {
 		if (checkCorrect) {
 			setScore(score + 1);
 		}
-		setShowAnswer(true)
+		setShowAnswer(true);
+		document.documentElement.style.setProperty("--explanationTransition", "0.7s");
+		document.documentElement.style.setProperty("--explanationOpacity", "1");
 	};
 
 	const nextQuestion = () => {
@@ -153,53 +155,59 @@ export default function SimpleQuiz() {
 		} else {
 			setShowScore(true); 
 		}
+		document.documentElement.style.setProperty("--explanationTransition", "0s");
+		document.documentElement.style.setProperty("--explanationOpacity", "0");
 	};
 	return (
-		<div className='simplequiz'>
-			{showScore ? (
-				<div>
-					<Progressbar className= 'question-progress-bar' progress={100} /> 
-					<div className='score-section'>
-						You scored {score} out of {quiz.length}!
-					</div>
-					<br />
-					<center><Link to="/">Back to Game Menu</Link></center>
-				</div>
-			) : (
-				<div>
-					<div className='question-section'>
-					<Progressbar className= 'question-progress-bar' progress={progressPercent} /> 
-						<div className='question-count'>
-							Question {questionNumber + 1}
+		<div>
+			<div className='simplequiz'>
+				{showScore ? (
+					<div>
+						<Progressbar className= 'question-progress-bar' progress={100} /> 
+						<div className='score-section'>
+							You scored {score} out of {quiz.length}!
 						</div>
-						<div className='question-text'>{quiz[currentQuestion].question}</div>
+						<br />
+						<center><Link to="/">Back to Game Menu</Link></center>
 					</div>
-					<div className='answer-section'>
-						{quiz[currentQuestion].answerList.map((answerOption) => (
-							<button 
-							className = {`${
-								showAnswer
-								  ? answerOption.checkCorrect
-									? 'correct-answer'
-									: 'wrong-answer'
-								  : ''
-							  }`}
-							onClick={() => handleAnswerOptionClick(answerOption.checkCorrect)}>{answerOption.answer}</button>
-						)
-						)
-					}
-					{showAnswer &&
-						(<div>
-							<div className='answer-explanation'>
-							{quiz[currentQuestion].explanation}
+				) : (
+					<div>
+						<div className='question-section'>
+						<Progressbar className= 'question-progress-bar' progress={progressPercent} /> 
+							<div className='question-count'>
+								Question {questionNumber + 1}
 							</div>
-							<button onClick={() => nextQuestion()}>Next
-							</button>
-						</div>)
-					}
+							<div className='question-text'>{quiz[currentQuestion].question}</div>
+						</div>
+						<div className='answer-section'>
+							{quiz[currentQuestion].answerList.map((answerOption) => (
+								<button 
+								className = {`${
+									showAnswer
+									? answerOption.checkCorrect
+										? 'correct-answer'
+										: 'wrong-answer'
+									: ''
+								}`}
+								onClick={() => handleAnswerOptionClick(answerOption.checkCorrect)}>{answerOption.answer}</button>
+							)
+							)
+						}
+						{showAnswer &&
+							(<div>
+								<br/>
+								<button onClick={() => nextQuestion()}>Next
+								</button>
+							</div>)
+						}
+						</div>
+						<div className='answer-explanation'>
+							<h3><i class="fa-solid fa-circle-info fa-xl"></i>&nbsp;&nbsp;More Info:</h3>
+							{quiz[currentQuestion].explanation}
+						</div>
 					</div>
-				</div>
-				)}
+					)}
+			</div>
 		</div>
 	);
 }
