@@ -14,7 +14,8 @@ export default function App() {
                   <Routes>         
                   <Route path="/" element={<Layout />}>           
                   <Route index element={<GameMenu />} />  
-                  <Route path="simplequiz" element={<SimpleQuiz />} />                                 
+                  <Route path="simplequiz" element={<SimpleQuiz />} />
+                  <Route path="caloriegame" element={<CalorieGame />} />
                   </Route>       
                   </Routes>  
       </BrowserRouter>  
