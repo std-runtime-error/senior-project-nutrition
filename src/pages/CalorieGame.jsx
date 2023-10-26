@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function App() { 
+export default function CalorieGame() { 
 	const images = [
 		{id: 1, src: "img/apple.png", description: 'apple'},
 		{id: 2, src: "img/banana.png", description: 'banana'},
