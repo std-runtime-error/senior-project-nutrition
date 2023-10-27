@@ -10,7 +10,7 @@ function Home(){
                         Game Menu</h1>
                 <div className='GameMenuList'>
                         <Link to="/SimpleQuiz" className='GameMenuButton'>Simple Quiz Game&nbsp;<i class="fa-solid fa-arrow-right fa-2xl"></i></Link>
-                        <Link to="/" className='GameMenuButton'><em>Coming Soon!</em></Link><br/>
+                        <Link to="/CalorieGame" className='GameMenuButton'>Calorie Guessing Game&nbsp;<i class="fa-solid fa-arrow-right fa-2xl"></i></Link><br/>
                         <Link to="/" className='GameMenuButton'><em>Coming Soon!</em></Link>
                         <Link to="/" className='GameMenuButton'><em>Coming Soon!</em></Link>
                 </div>

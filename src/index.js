@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Layout from "./pages/Layout"; 
 import GameMenu from "./pages/GameMenu";
 import SimpleQuiz from './pages/SimpleQuiz';
+import CalorieGame from './pages/CalorieGame';
 
 export default function App() { 
 
@@ -14,7 +15,8 @@ export default function App() {
                   <Routes>         
                   <Route path="/" element={<Layout />}>           
                   <Route index element={<GameMenu />} />  
-                  <Route path="simplequiz" element={<SimpleQuiz />} />                                 
+                  <Route path="simplequiz" element={<SimpleQuiz />} />
+                  <Route path="caloriegame" element={<CalorieGame />} />
                   </Route>       
                   </Routes>  
       </BrowserRouter>  
