@@ -8,8 +8,8 @@ export default function CalorieGame() {
 		{id: 2, src: "img/banana.png", description: 'banana'},
 		{id: 3, src: "img/orange.png", description: 'orange'},
 		{id: 4, src: "img/grape.png", description: 'grape'},
-		{id: 5, src: "img/spaghet.png", description: 'spaghetti'},
-		{id: 6, src: "img/mcdonaldsburger.png", description: 'burger'} 
+		{id: 5, src: "img/spaghet.jpg", description: 'spaghetti'},
+		{id: 6, src: "img/mcdonaldsburger.jpg", description: 'burger'} 
 
 	];
 
