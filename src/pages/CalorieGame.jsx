@@ -7,9 +7,9 @@ export default function CalorieGame() {
 		{id: 1, src: "img/apple.png", description: 'apple'},
 		{id: 2, src: "img/banana.png", description: 'banana'},
 		{id: 3, src: "img/orange.png", description: 'orange'},
-		{id: 4, src: "img/grape.png", description: 'grape'}
-	//	{id: 5, src: "img/spaghet.png", description: 'spaghetti'},
-	//	{id: 6, src: "img/mcdonaldsburger.png", description: 'burger'} 
+		{id: 4, src: "img/grape.png", description: 'grape'},
+		{id: 5, src: "img/spaghet.jpg", description: 'spaghetti'},
+		{id: 6, src: "img/mcdonaldsburger.jpg", description: 'burger'} 
 
 	];
 
@@ -18,8 +18,8 @@ export default function CalorieGame() {
 		{id: 2, answer: 60},
 		{id: 3, answer: 70},
 		{id: 4, answer: 80},
-		//{id: 5, answer: 550},
-	//	{id: 6, answer: 800},
+		{id: 5, answer: 550},
+		{id: 6, answer: 800},
 
 	];
 
