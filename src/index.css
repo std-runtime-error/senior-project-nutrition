@@ -295,3 +295,65 @@ background-color: var(--correctAnswer);
   border-radius: 15px;
   margin-top: 50px;
 }
+
+.caloriegame {
+  background-color: var(--windowBackground);
+  min-width: 550px;
+  min-height: 200px;
+  height: min-content;
+  border-radius: 15px;
+  padding: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
+  border: 3px solid var(--windowBorder);
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: 10px 10px 3px #1c1c1cb8;
+
+}
+
+.foodReference {
+  background-color: var(--windowBackground);
+  width: inherit;
+  max-width: 625px;
+  height: 25px;
+  border-radius: 15px;
+  padding: 25px;
+  border: 3px solid var(--windowBorder);
+  display: flex;
+  box-shadow: 10px 10px 3px #1c1c1cb8;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  
+  padding-top:5px;
+  margin-top:15px;
+
+  transition: 0.4s;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  overflow: hidden;
+
+  &:hover,
+  &:focus { 
+    padding-top:15px;
+    height: 200px;
+    margin-top:0px;
+  }
+}
+
+.foodReferenceHeader{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+  width: 50%;
+  padding-bottom: 10px;
+}
+.foodReferenceContents{
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  font-size: 15px;
+  word-wrap: break-word;
+}
