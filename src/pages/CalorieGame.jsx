@@ -4,6 +4,25 @@ import Progressbar from './Progress_bar';
 import FoodReference from './FoodReference';
 
 export default function CalorieGame() { 
+
+	function getRandNumInRange(min = 0, max = estimations.length) {
+		let x = Math.floor(Math.random() * (max - min) + min);
+		return x;
+	  }
+	  //Returns a random int corresponding to a question that hasn't been displayed yet.
+	  //If all questions have been displayed, returns (# of questions + 1)
+	  function getRandomQuestion() {
+		if (usedQuestions.length == estimations.length)
+			return estimations.length+1;
+		let x = getRandNumInRange();
+		while(usedQuestions.includes(x))
+			x = getRandNumInRange();
+		const nextUsedQuestions = usedQuestions.slice();
+		nextUsedQuestions.push(x);
+		setUsedQuestions(nextUsedQuestions);
+		return x;
+	}
+	
 	const images = [
 		{id: 1, src: "img/apple.png", description: 'apple'},
 		{id: 2, src: "img/banana.png", description: 'banana'},
@@ -24,7 +43,8 @@ export default function CalorieGame() {
 
 	];
 
-	const [currentQuestion, setEstimationNum] = useState(0);
+	const [currentQuestion, setEstimationNum] = useState(getRandNumInRange(0, estimations.length));
+	const [usedQuestions, setUsedQuestions] = useState([currentQuestion.valueOf]);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 	const [inputText, setValue] = useState('');
@@ -41,27 +61,27 @@ export default function CalorieGame() {
 		if (inputText >= lowerVal && inputText <= upperVal) {
 			setScore(score + 1);
 		}
-		const nextQuestion = currentQuestion + 1;
-		setValue('');
+		const nextQuestion = getRandomQuestion();
 		if (nextQuestion < estimations.length) {
 			setEstimationNum(nextQuestion);
-		} 
-		else {
+		}
+		setValue('');
+		if (usedQuestions.length == estimations.length) {
 			setShowScore(true);
 		}	
 	}; 
 	return (
 		<div>
 			<div className='caloriegame'>
-				{showScore ? (
-					<div className='score-section'>
-						You scored {score} out of {estimations.length}
-					</div>
-				) : (
-					<React.Fragment>
-						<div className='question-section'>
-							<div className='question-count'>
-								<span>Estimation {currentQuestion + 1}</span>
+			  {showScore ? (
+				  <div className='score-section'>
+					  You scored {score} out of {estimations.length}
+				  </div>
+			  ) : (
+				  <React.Fragment>
+					  <div className='question-section'>
+					  	<div className='question-count'>
+							  <span>Estimation {usedQuestions.length}</span>
 							</div>
 							<div className='print-image' align='center'>
 								<img src={images[currentQuestion].src} alt={images[currentQuestion].description} width='160' height='160'/>

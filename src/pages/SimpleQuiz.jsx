@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import Progressbar from './Progress_bar'; 
 
+function sum(a, b) { //sample unit test
+  return a + b;
+}
+
+//module.exports = sum; //needed for unit test
 
 export default function SimpleQuiz() {
 	//Generates random int from min to max (exclusive). 	
 	//Probably shouldn't hardcode the default parameter as 8
-	function getRandNumInRange(min = 0, max = 9) {
+	function getRandNumInRange(min = 0, max = quiz.length) {
 		let x = Math.floor(Math.random() * (max - min) + min);
 		return x;
 	  }
@@ -106,10 +111,10 @@ export default function SimpleQuiz() {
 		},
 
 		{
-			question: 'Which has more carbs?',
+			question: 'Wheat has more carbs than rice.',
 			answerList: [
-				{answer: 'Wheat', checkCorrect: false}, // 17 g
-				{answer: 'Rice', checkCorrect: true}, //45 g per cup
+				{answer: 'True', checkCorrect: false}, // 17 g
+				{answer: 'False', checkCorrect: true}, //45 g per cup
 			],
 			explanation: 'Rice has significantly more carbs at 45g per cup compared to 17 for the same amount of wheat.',
 
