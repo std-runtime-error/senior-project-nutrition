@@ -1,3 +1,32 @@
+:root{
+
+  /* Color Variables */
+  --screenBackground1: #6b796c;
+  --screenBackground2: #525e52;
+  --screenBackground3: #475347;
+  --screenBackground4: #414a41;
+  --screenBackground5: #414a41;
+
+  --windowBackground: #ffffff;
+  --windowBorder: #525252;
+
+  --textColor: #15001d;
+
+  --buttonBackground: #c1d3c2;
+  --buttonBorder: #56695b;
+  --buttonHighlight: #39bb18;
+
+  --correctAnswer: #8ad5a5;
+  --incorrectAnswer: #d29e9e;
+  --accent: #c1d3c2;
+
+  /* Opacity Variables */
+  --explanationOpacity: 0;
+  --explanationTransition: 0.7s;
+
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,16 +34,44 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+ /* Background provided by FreeFrontend
+  Author: Josetxu
+  Date: Dec 31, 2021
+  Title: 3D Honeycomb Tessellated Pattern. No Div. Pure CSS
+  Link: https://codepen.io/josetxu/pen/BawYgjG
+*/
+  --u:  1.52vmin;
+	--c1: var(--screenBackground1);
+	--c2: var(--screenBackground2);
+	--c3: var(--screenBackground3);
+	--c4: var(--screenBackground4);
+	--c5: var(--screenBackground5);
+	--gp: 50%/calc(var(--u) * 10) calc(var(--u) * 17.5);
+	--bp: calc(var(--u) * -5) calc(var(--u) * -8.75);
+	height: 100vh;
+	--bg: 
+		conic-gradient(from 120deg at 74.5% 91.75% , var(--c2) 0 120deg, #fff0 0 360deg) var(--gp), 
+		conic-gradient(from 120deg at 25.5% 91.75% , var(--c1) 0 120deg, #fff0 0 360deg) var(--gp), 
+		conic-gradient(from 60deg at 74.5% 75%, var(--c3) 0 120deg, #fff0 0 360deg) var(--gp), 
+		conic-gradient(from 180deg at 25.5% 75%, var(--c2) 0 120deg, #fff0 0 360deg) var(--gp), 
+		conic-gradient(from 120deg at 50% 67%, var(--c5) 0 120deg, #fff0 0 360deg) var(--gp), 
+		conic-gradient(from 90deg at 50% 50%, var(--c1) 0 30deg, var(--c4) 0 90deg, var(--c3) 0 150deg, var(--c2) 0 180deg, #fff0 0 360deg) var(--gp);
+	background: 
+		var(--bg), var(--bg), var(--c1);
+   background-position: 
+		var(--bp), var(--bp), var(--bp), var(--bp), var(--bp), var(--bp),
+		0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+	
 }
 
 * {
-  font-family: "Verdana", cursive, sans-serif;
-  color: #15001d;
+  font-family: "Arial", cursive, sans-serif;
+  color: var(--textColor);
 }
 
 /* setting for background of the app */
 body {
-  background-color: #883c9b;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,31 +80,39 @@ body {
 
 /* setting for the quiz box */
 .simplequiz {
-  background-color: #ffffff;
-  width: 550px;
+  background-color: var(--windowBackground);
+  min-width: 550px;
   min-height: 200px;
   height: min-content;
   border-radius: 15px;
-  padding: 20px;
-  border: 3px solid #525252;
+  padding: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
+  border: 3px solid var(--windowBorder);
   display: flex;
   justify-content: space-evenly;
+  box-shadow: 10px 10px 3px #1c1c1cb8;
+
 }
 
 .score-section {
+  margin-top: 20px;
   white-space: pre-wrap;
   display: flex;
-  font-size: 24px;
+  font-size: 36px;
   align-items: center;
 }
 
 .question-section {
   width: 100%;
+  min-width: 500px;
   position: relative;
 }
 
 .question-count {
+  margin-top: 10px;
   margin-bottom: 20px;
+  font-size:20px;
 }
 
 .question-count span {
@@ -56,10 +121,12 @@ body {
 
 .question-text {
   margin-bottom: 12px;
+  font-size:25px;
+
 }
 
 .answer-section {
-  width: 100%;
+  width: 97%;
   display: flex;
   flex-direction: column;
   justify-content : center;
@@ -68,43 +135,163 @@ body {
 /* Setting for answers' button */
 button {
   width: 103%;
-  font-size: 16px;
-  color: #000000;
-  background-color: #baa8bd;
+  font-size: 20px;
+  color: var(--textColor);
+  background-color: var(--buttonBackground);
   border-radius: 15px;
   display: flex;
   padding: 5px;
   justify-content: center;
   align-items: center;
-  border: 3px solid #a5a5a5;
+  border: 3px solid var(--buttonBorder);
   cursor: pointer;
   margin-bottom: 5px;
+  box-shadow: 5px 5px 3px #00000042;
+  transition:0.05s;
+
+  &:hover { 
+    border: 3px solid var(--buttonHighlight);
+    box-shadow: 5px 5px 3px #000000a0;
+  }
+}
+
+.correct-answer {
+background-color: var(--correctAnswer);
+}
+
+.wrong-answer {
+  background-color: var(--incorrectAnswer);
+}
+
+.answer-explanation {
+  opacity: var(--explanationOpacity);
+  transition: var(--explanationTransition);
+
+  width: 300px;
+
+  background-color: var(--windowBackground);
+  border-radius: 15px;
+  margin-top: 5px;
+  padding: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border: 3px solid var(--windowBorder);
+
+  justify-content: space-evenly;
+  box-shadow: 10px 10px 3px #1c1c1cb8;
+  position: absolute;
+  right: calc(50vw - 800px);
+  top: calc(50vh - 160px);
+  margin-right: 0;
 }
 
 .NavigationBar {
   position: fixed;
-  left: 0;
+  left: -150px;
   top: 0;
   width: 200px;
+  max-width: 200px;
+  min-width: 50px;
   height: 100%;
-  background-color: #ffffff;
+  background-color: var(--windowBackground);
   border-radius: 0px;
   padding: 10px;
-  border: 3px solid #525252;
+  border-top: 3px solid var(--windowBorder);
+  border-right: 3px solid var(--windowBorder);
+  border-left: 3px solid var(--windowBorder);
+  border-left: 3px solid var(--windowBackground);
   display: flex;
   flex-flow: column;
   align-items: center;
+  transition: 0.5s;
+}
+.NavigationBar:hover{ 
+  left: 0px;
+  max-width: 200px;
+  min-width: 100px;
+  height: 100%;
+  box-shadow: 7px 7px 7px #000000a0;
+}
+
+.NavigationBar:hover > .NavigationIcon{
+  opacity: 0;
+  left: 180px;
+}
+.NavigationBar:hover > .NavigationContents{
+  opacity: 1;
+}
+
+.NavigationContents{
+  opacity: 0;
+  transition:0.3s;
+}
+.NavigationIcon{
+  opacity: 1;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 170px;
+  transition:0.4s;
 }
 
 .GameMenu {
-  background-color: #ffffff;
-  width: 700px;
-  min-height: 300px;
+  background-color: var(--windowBackground);
+  width: 60vw;
+  min-height: 60vh;
   height: min-content;
   border-radius: 15px;
   padding: 20px;
-  border: 3px solid #525252;
+  border: 3px solid var(--windowBorder);
+  align-items: left;
+  font-size: 30px;
+  box-shadow: 15px 15px 3px #1c1c1cb8;
+}
+
+.GameMenuButton{
+  height: 3vh;
+  width: 20vw;
+  font-size: 25px;
+  vertical-align: middle;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--textColor);
+  background-color: var(--buttonBackground);
+  border-radius: 15px;
+  padding: 50px;
+  border: 3px solid var(--buttonBorder);
+  margin-bottom: 5px;
+  box-shadow: 5px 5px 3px #00000042;
+  transition: 0.1s;
+
+  &:hover,
+  &:focus { 
+    height: calc(3vh - 6px);
+    width: calc(20vw - 6px);
+    border: 6px solid var(--buttonHighlight);
+    font-size:30px;
+    box-shadow: 7px 7px 7px #000000a0;
+  }
+}
+
+.GameMenuList {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 20px;
+}
+
+.ColorSwitcher{
+  font-weight: bold;
   display: flex;
   flex-flow: column;
-  align-items: left;
+  align-content: center;
+  align-items: center;
+  border: 3px solid var(--windowBorder);
+  padding:5px;
+  border-radius: 15px;
+  margin-top: 50px;
 }
