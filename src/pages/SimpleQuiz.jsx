@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import Progressbar from './Progress_bar'; 
 
+function sum(a, b) { //sample unit test
+  return a + b;
+}
+
+module.exports = sum; //needed for unit test
 
 export default function SimpleQuiz() {
 	//Generates random int from min to max (exclusive). 	

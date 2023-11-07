@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "babel": "^6.23.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0"
@@ -9,12 +10,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {
-    "react-scripts": "5.0.1"
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
+    "babel-jest": "^29.7.0",
+    "jest": "^27.5.1",
+    "react-scripts": "5.0.1",
+    "react-test-renderer": "^18.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "author": "",
@@ -30,5 +36,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest"
+    }
   }
 }
