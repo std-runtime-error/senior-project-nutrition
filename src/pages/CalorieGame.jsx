@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import Progressbar from './Progress_bar'; 
+import FoodReference from './FoodReference';
 
 export default function CalorieGame() { 
 
@@ -70,32 +71,37 @@ export default function CalorieGame() {
 		}	
 	}; 
 	return (
-		<div className='app'>
-			{showScore ? (
-				<div className='score-section'>
-					You scored {score} out of {estimations.length}
-				</div>
-			) : (
-				<React.Fragment>
-					<div className='question-section'>
-						<div className='question-count'>
-							<span>Estimation {usedQuestions.length}</span>
+		<div>
+			<div className='caloriegame'>
+			  {showScore ? (
+				  <div className='score-section'>
+					  You scored {score} out of {estimations.length}
+				  </div>
+			  ) : (
+				  <React.Fragment>
+					  <div className='question-section'>
+					  	<div className='question-count'>
+							  <span>Estimation {usedQuestions.length}</span>
+							</div>
+							<div className='print-image' align='center'>
+								<img src={images[currentQuestion].src} alt={images[currentQuestion].description} width='160' height='160'/>
+							</div>
+							<div className='inputBox' align='center'>
+								<input onChange={checkChangedValue} value={inputText} placeholder='Type your answer'/>
+							</div>
+							<br/>
+						<div className='enter-button'>
+							<button onClick={() => clickEnter(inputText)}>Enter</button>
 						</div>
-						<div className='print-image'>
-							<img src={images[currentQuestion].src} alt={images[currentQuestion].description} width='160' height='160'/>
+						<div className='showInput'>
+							<b>Your Input Value: {inputText} kcal</b>
 						</div>
-						<div className='inputBox'>
-							<input onChange={checkChangedValue} value={inputText} placeholder='Type your answer'/>
 						</div>
-      				<div className='enter-button'>
-						<button onClick={() => clickEnter(inputText)}>Enter</button>
-					</div>
-      				<div className='showInput'>
-        				<b>Your Input Value: {inputText} kcal</b>
-      				</div>
-    				</div>
-				</React.Fragment>
-			)}
+					</React.Fragment>
+				)}
+			</div>
+		<br/>
+		<FoodReference game="CalorieGameFruit"/>
 		</div>
 	);
 }
