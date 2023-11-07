@@ -8,4 +8,6 @@
 
 # then use npm start to run
 
+# Put the image files to public/img
+
 # circleci test commit 3
