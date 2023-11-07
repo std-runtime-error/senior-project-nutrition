@@ -10,7 +10,7 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: npm
-       - run:
+      - run:
           command: npm run build
           name: Build app
       - run:
