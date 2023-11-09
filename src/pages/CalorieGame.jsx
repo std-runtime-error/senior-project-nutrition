@@ -62,16 +62,27 @@ export default function CalorieGame() {
 		// Add more mappings as needed
 	  };
 
-	const clickEnter = () => {
-		//Set the 5% margin
-		let marginOfError = 0.05;
-		let lowerVal = estimations[currentQuestion].answer * (1-marginOfError);
-		let upperVal = estimations[currentQuestion].answer * (1+marginOfError);
+	  function calculatePoints(guess, trueAnswer, marginOfErrorForNone) {
+		const minVal = (trueAnswer*marginOfErrorForNone);  
+		guess /= minVal;
+		trueAnswer /= minVal;
+		const percentageDifference = Math.round(Math.abs((guess - trueAnswer))*100)/100;
+	//console.log(`Guess: ${guess}, true answer: ${trueAnswer}, percent diff: ${percentageDifference}`);
+		const points = Math.round(pointsPerQuestion * (1 - Math.pow(percentageDifference, 2)));
+		return Math.max(points, 0);
+	  }
 
-		if (inputText >= lowerVal && inputText <= upperVal) {
-			setScore(score + 1);
-		}
+	const pointsPerQuestion = 10;
+	const clickEnter = () => {
+
+		let marginOfErrorForNone = 0.5;
+
+		let pointsEarned = calculatePoints(inputText,estimations[currentQuestion].answer,marginOfErrorForNone)
+		setScore(score + pointsEarned);
+
 		const nextQuestion = getRandomQuestion();
+		setValue('');
+
 		if (nextQuestion < estimations.length) {
 			setEstimationNum(nextQuestion);
 		}
@@ -85,7 +96,7 @@ export default function CalorieGame() {
 			<div className='caloriegame'>
 			  {showScore ? (
 				  <div className='score-section'>
-					  You scored {score} out of {estimations.length}
+					  You scored {score} out of {estimations.length*pointsPerQuestion}
 				  </div>
 			  ) : (
 				  <React.Fragment>
