@@ -12,7 +12,7 @@ export default function CalorieGame() {
 	  //Returns a random int corresponding to a question that hasn't been displayed yet.
 	  //If all questions have been displayed, returns (# of questions + 1)
 	  function getRandomQuestion() {
-		if (usedQuestions.length == estimations.length)
+		if (usedQuestions.length === estimations.length)
 			return estimations.length+1;
 		let x = getRandNumInRange();
 		while(usedQuestions.includes(x))
@@ -24,33 +24,43 @@ export default function CalorieGame() {
 	}
 	
 	const images = [
-		{id: 1, src: "img/apple.png", description: 'apple'},
-		{id: 2, src: "img/banana.png", description: 'banana'},
-		{id: 3, src: "img/orange.png", description: 'orange'},
-		{id: 4, src: "img/grape.png", description: 'grape'},
-		{id: 5, src: "img/spaghet.jpg", description: 'spaghetti'},
-		{id: 6, src: "img/mcdonaldsburger.jpg", description: 'burger'} 
+		{id: 0, src: "img/apple.png", description: 'apple'},
+		{id: 1, src: "img/banana.png", description: 'banana'},
+		{id: 2, src: "img/orange.png", description: 'orange'},
+		{id: 3, src: "img/grape.png", description: 'grape'},
+		{id: 4, src: "img/spaghet.jpg", description: 'spaghetti'},
+		{id: 5, src: "img/mcdonaldsburger.jpg", description: 'burger'} 
 
 	];
 
 	const estimations = [
-		{id: 1, answer: 50},
-		{id: 2, answer: 60},
-		{id: 3, answer: 70},
-		{id: 4, answer: 80},
-		{id: 5, answer: 550},
-		{id: 6, answer: 800},
+		{id: 0, answer: 50},
+		{id: 1, answer: 60},
+		{id: 2, answer: 70},
+		{id: 3, answer: 80},
+		{id: 4, answer: 550},
+		{id: 5, answer: 800},
 
 	];
 
 	const [currentQuestion, setEstimationNum] = useState(getRandNumInRange(0, estimations.length));
-	const [usedQuestions, setUsedQuestions] = useState([currentQuestion.valueOf]);
+	const [usedQuestions, setUsedQuestions] = useState([currentQuestion]);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 	const [inputText, setValue] = useState('');
 	const checkChangedValue = (e) => {
     	setValue(e.target.value);
   	};
+
+	  const foodTypeMapping = {
+		0: 'Fruit',
+		1: 'Fruit',
+		2: 'Fruit',
+		3: 'Fruit',
+		4: 'Junk',
+		5: 'Junk',
+		// Add more mappings as needed
+	  };
 
 	const clickEnter = () => {
 		//Set the 5% margin
@@ -101,7 +111,7 @@ export default function CalorieGame() {
 				)}
 			</div>
 		<br/>
-		<FoodReference game="CalorieGameFruit"/>
+		<FoodReference game={"CalorieGame" + foodTypeMapping[estimations[currentQuestion].id]} />
 		</div>
 	);
 }

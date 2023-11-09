@@ -16,7 +16,7 @@ export default function SimpleQuiz() {
 	  //Returns a random int corresponding to a question that hasn't been displayed yet.
 	  //If all questions have been displayed, returns (# of questions + 1)
 	  function getRandomQuestion() {
-		if (usedQuestions.length == quiz.length)
+		if (usedQuestions.length === quiz.length)
 			return quiz.length+1;
 		let x = getRandNumInRange();
 		while(usedQuestions.includes(x))
@@ -133,7 +133,7 @@ export default function SimpleQuiz() {
 	const [selectedAnswer, setSelectedAnswer] = useState(null);
 	const [questionNumber, setQuestionNumber] = useState(0);
 	const [currentQuestion, setCurrentQuestion] = useState(getRandNumInRange(0,quiz.length));
-	const [usedQuestions, setUsedQuestions] = useState([currentQuestion.valueOf]);
+	const [usedQuestions, setUsedQuestions] = useState([currentQuestion]);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 	const [progressPercent, setProgressPercent] = useState(0);

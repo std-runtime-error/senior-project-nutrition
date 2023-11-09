@@ -27,7 +27,29 @@ function FoodReference(props){
             </div>
         ); 
     }
-
+    else if (props.game === "CalorieGameJunk"){
+        return (
+            <div>
+                <div className="foodReference">
+                    <div className="foodReferenceHeader">
+                        &nbsp;&nbsp;&nbsp; Food Reference Sheet &nbsp;&nbsp;&nbsp; <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                    <div className="foodReferenceContents">
+                        <i class="fa-solid fa-circle-info"></i> Use the following information to help you make an educated guess! 
+                        <ul>
+                            <li> Test: 52 kcal </li>
+                            <li> Test: 89 kcal </li>
+                            <li> Test: 47 kcal </li>
+                            <li> Test: 62 kcal </li>
+                            <li> Test: 221 kcal </li>
+                            <li> Test : 250 kcal </li>
+                        </ul>
+                    </div>          
+                </div>
+            </div>
+        ); 
+    
+    }
     //add more reference sheets here
 
 
