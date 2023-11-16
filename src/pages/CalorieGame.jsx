@@ -29,8 +29,17 @@ export default function CalorieGame() {
 		{id: 2, src: "img/orange.png", description: 'orange'},
 		{id: 3, src: "img/grape.png", description: 'grape'},
 		{id: 4, src: "img/spaghet.jpg", description: 'spaghetti'},
-		{id: 5, src: "img/mcdonaldsburger.jpg", description: 'burger'} 
-
+		{id: 5, src: "img/mcdonaldsburger.jpg", description: 'burger'},
+		{id: 6, src: "img/broccoli_half_cup.jpg", description: "broccoli"},
+		{id: 7, src: "img/brussel_sprouts.jpg", description: "brussel sprouts"},
+		{id: 8, src: "img/carrots_one_cup.jpg", description: "carrots"},
+		{id: 9, src: "img/kale_one_cup.jpg", description: "kale"},
+		{id:10, src: "img/onion.jpg", description: "onion"},
+		{id:11, src: "img/WhiteRice.jpeg", description: "WhiteRice"},
+		{id:12, src: "img/SweetPotato.png", description: "SweetPotato"},
+		{id:13, src: "img/Potato.png", description: "Potato"},
+		{id:14, src: "img/WhiteBread.jpg", description: "WhiteBread"},
+		{id:15, src: "img/Doughnut.png", description: "Doughnut"},
 	];
 
 	const estimations = [
@@ -40,7 +49,16 @@ export default function CalorieGame() {
 		{id: 3, answer: 80},
 		{id: 4, answer: 550},
 		{id: 5, answer: 800},
-
+		{id: 6, answer: 15}, //broccoli: 0.5 cup or 44g
+		{id: 7, answer: 60}, //brussel sprouts: 8 sprouts or 168g
+		{id: 8, answer: 52}, //carrots: 1 cup or 128g
+		{id: 9, answer: 36}, //kale: 1 cup or 130g
+		{id:10, answer: 41}, //onion: one medium onion or 94g
+		{id:11, answer: 160}, // White rice
+		{id:12, answer: 110}, // Sweet Potato
+		{id:13, answer: 110}, // Potato
+		{id:14, answer: 98}, // White bread
+		{id:15, answer: 190} // Doughnut
 	];
 
 	const [currentQuestion, setEstimationNum] = useState(getRandNumInRange(0, estimations.length));
@@ -59,6 +77,16 @@ export default function CalorieGame() {
 		3: 'Fruit',
 		4: 'Junk',
 		5: 'Junk',
+		6: 'Vegetable',
+		7: 'Vegetable',
+		8: 'Vegetable',
+		9: 'Vegetable',
+		10: 'Vegetable',
+		11: 'Carbohydrate',
+		12: 'Carbohydrate',
+		13: 'Carbohydrate',
+		14: 'Carbohydrate',
+		15: 'Carbohydrate'
 		// Add more mappings as needed
 	  };
 
@@ -91,13 +119,28 @@ export default function CalorieGame() {
 			setShowScore(true);
 		}	
 	}; 
+	const restartGame = () => {
+		setEstimationNum(getRandNumInRange(0,estimations.length));
+		setUsedQuestions([currentQuestion.valueOf]); 
+		setShowScore(false);
+		setScore(0);
+	};
 	return (
 		<div>
 			<div className='caloriegame'>
 			  {showScore ? (
+				  <div>
+				  	<Progressbar className= 'question-progress-bar' progress={100} /> 
 				  <div className='score-section'>
-					  You scored {score} out of {estimations.length*pointsPerQuestion}
+					You scored {score} out of {estimations.length}!
 				  </div>
+				  <br />
+				  <div className='restart-game'>
+					<center><button onClick={() => restartGame()}>Restart the Game</button></center>
+				  </div>	
+				  <br />
+					<center><Link to="/">Back to Game Menu</Link></center>
+			  </div>
 			  ) : (
 				  <React.Fragment>
 					  <div className='question-section'>

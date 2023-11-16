@@ -48,7 +48,6 @@ export default function SimpleQuiz() {
 				{answer: 'Sodium', checkCorrect: false},
 			],
 			explanation: 'Oranges contain 40mg of calcium! (6% of your daily needs). This is almost 4x more than an apple!',
-
 		},
 
 		{
@@ -58,7 +57,6 @@ export default function SimpleQuiz() {
 				{answer: 'Mayonnaise', checkCorrect: true},
 			],
 			explanation: 'A single tablespoon of mayo contains a whopping 10g of fat and 100 calories! This is nearly 1/5 for most daily recommended amount of fat!',
-
 		},
 
 		{
@@ -71,7 +69,6 @@ export default function SimpleQuiz() {
 				{answer: 'Soybeans', checkCorrect: true}, // 31 g / 3oz
 			],
 			explanation: 'Soybeans contain 31 g of protein per 3 oz serving, the other meats contain about 23g for the same amount!',
-
 		},
 
 		{
@@ -83,7 +80,6 @@ export default function SimpleQuiz() {
 				{answer: 'Pineapple', checkCorrect: false}, //82
 			],
 			explanation: 'Pineapple has the most calories at 82 cals / cup! For comparison, watermelon has roughly half that at 47.',
-
 		},
 
 		{
@@ -95,7 +91,6 @@ export default function SimpleQuiz() {
 				{answer: 'Diet coke has more sodium', checkCorrect: false},
 			],
 			explanation: 'Diet coke has more caffeine and sodium compared to regular Coke. Also, it contains no sugar since it uses an artifical sweetner called aspartame. However, neither contain any calcium',
-
 		},
 
 		{
@@ -105,17 +100,15 @@ export default function SimpleQuiz() {
 				{answer: 'Brussel sprout', checkCorrect: true}, //1.23 
 			],
 			explanation: 'Brussel sprouts contain nearly double at 1.25mg / cup!',
-
 		},
 
 		{
-			question: 'Wheat has more carbs than rice.',
+			question: 'Wheat has more carbs than rice',
 			answerList: [
 				{answer: 'True', checkCorrect: false}, // 17 g
 				{answer: 'False', checkCorrect: true}, //45 g per cup
 			],
 			explanation: 'Rice has significantly more carbs at 45g per cup compared to 17 for the same amount of wheat.',
-
 		},
 
 		{
@@ -127,7 +120,144 @@ export default function SimpleQuiz() {
 				{answer: 'Bread', checkCorrect: true}, // 78 mg per slice
 			],
 			explanation: 'Milk has by far the most calcium at 305 mg per cup. The next closest is bread at 78 mg per slice.',
-
+		},
+		{
+			question: 'High fiber has lots of benefits to human health. What are the benefits of a high fiber diet?',
+			answerList: [
+				{answer: 'Helps lower cholesterol levels', checkCorrect: false},
+				{answer: 'Helps in controlling blood sugar', checkCorrect: false},
+				{answer: 'Maintains bowel health', checkCorrect: false},
+				{answer: 'All of the above', checkCorrect: true},
+			],
+			explanation: '',
+		},
+		{
+			question: 'Why is Olive oil healthier than butter?',
+			answerList: [
+				{answer: 'It has less sugar', checkCorrect: false},
+				{answer: 'It has less calories', checkCorrect: false},
+				{answer: 'It’s made of unsaturated fats instead of saturated', checkCorrect: true},
+				{answer: 'It has less fat', checkCorrect: false},
+			],
+			explanation: '',
+		},
+		{
+			question: 'What is an advantage of Fast Food?',
+			answerList: [
+				{answer: 'It is in the name (it is fast)', checkCorrect: true},
+				{answer: 'High blood pressure', checkCorrect: false},
+				{answer: 'High Sodium', checkCorrect: false},
+				{answer: 'Raise Cholesterol', checkCorrect: false},
+			],
+			explanation: '',
+		},
+		{
+			question: 'What are the reasons to maintain proper vitamin B12 levels in your diet?',
+			answerList: [
+				{answer: 'Good blood and nerve cell health', checkCorrect: false},
+				{answer: 'Helps in making DNA', checkCorrect: false},
+				{answer: 'Formation of red blood cells', checkCorrect: false},
+				{answer: 'All of the above', checkCorrect: true},
+			],
+			explanation: '',
+		},
+		{
+			question: 'What are the reasons to maintain proper vitamin C levels in your diet?',
+			answerList: [
+				{answer: 'Protection against immune system deficiencies', checkCorrect: false},
+				{answer: 'Lower risk of cardiovascular disease', checkCorrect: false},
+				{answer: 'Protection against skin wrinkling', checkCorrect: false},
+				{answer: 'All of the above', checkCorrect: true},
+			],
+			explanation: '',
+		},
+		{
+			question: 'Raisins have more carbs than Oats (per oz)',
+			answerList: [
+				{answer: 'True', checkCorrect: true},
+				{answer: 'False', checkCorrect: false},
+			],
+			explanation: '',
+		},
+		{
+			question: 'Raisins have more carbs than Oats (per oz)',
+			answerList: [
+				{answer: 'Milk', checkCorrect: false},
+				{answer: 'Spinach', checkCorrect: false},
+				{answer: 'Oranges', checkCorrect: false},
+				{answer: 'Bread', checkCorrect: true},
+			],
+			explanation: '',
+		},
+		{
+			question: 'Wasabi and Soy Sauce both have what in common?',
+			answerList: [
+				{answer: 'High sodium', checkCorrect: true},
+				{answer: 'High sugar', checkCorrect: false},
+				{answer: 'High cholesterol', checkCorrect: false},
+				{answer: 'High fat', checkCorrect: false},
+			],
+			explanation: '',
+		},
+		{
+			question: 'HDL cholesterol (good cholesterol) is raised by which of the following foods',
+			answerList: [
+				{answer: 'Oatmeal', checkCorrect: true},
+				{answer: 'Broccoli', checkCorrect: false},
+				{answer: 'Low-fat milk', checkCorrect: false},
+				{answer: 'Potatoes', checkCorrect: false},
+			],
+			explanation: '',
+		},
+		{
+			question: 'What is the ideal amount of trans-fat you should ingest daily?',
+			answerList: [
+				{answer: '0 g', checkCorrect: true},
+				{answer: '10 g', checkCorrect: false},
+				{answer: '5 g', checkCorrect: false},
+				{answer: '1 g', checkCorrect: false},
+			],
+			explanation: '',
+		},
+		{
+			question: 'What is not correct as a symptom that occurs in the body when protein is lacking?',
+			answerList: [
+				{answer: 'muscle loss', checkCorrect: false},
+				{answer: 'Reduced skin elasticity', checkCorrect: false},
+				{answer: 'thinning of hair', checkCorrect: false},
+				{answer: 'deterioration of vision', checkCorrect: true},
+			],
+			explanation: '',
+		},
+		{
+			question: 'What is not a symptom of excessive caffeine intake?',
+			answerList: [
+				{answer: 'Insomnia', checkCorrect: false},
+				{answer: 'Increasing heart rate', checkCorrect: false},
+				{answer: 'Increasing appetite', checkCorrect: true},
+				{answer: 'excessive gastric acid', checkCorrect: false},
+			],
+			explanation: '',
+		},
+		{
+			question: 'What is a possible advantage of high carb diets?',
+			answerList: [
+				{answer: 'Increased weight gain', checkCorrect: true},
+				{answer: 'Increased risk of cardiovascular disease', checkCorrect: false},
+				{answer: 'Lower quality of sleep', checkCorrect: false},
+				{answer: 'Fatigue and inconsistent energy levels', checkCorrect: false},
+			],
+			explanation: '',
+		},
+		{
+			question: 'What are the side effects of low Vitamin D levels?',
+			answerList: [
+				{answer: 'Muscle Fatigue', checkCorrect: false},
+				{answer: 'Less immune effectiveness', checkCorrect: false},
+				{answer: 'Fatigue/Lower quality of sleep', checkCorrect: false},
+				{answer: 'All of the above', checkCorrect: true},
+			],
+			explanation: '',
 		},
 	];
 	const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -164,6 +294,15 @@ export default function SimpleQuiz() {
 		document.documentElement.style.setProperty("--explanationTransition", "0s");
 		document.documentElement.style.setProperty("--explanationOpacity", "0");
 	};
+
+	const restartGame = () => {
+		setQuestionNumber(0);
+		setCurrentQuestion(getRandNumInRange(0,quiz.length));
+		setUsedQuestions([currentQuestion.valueOf]); 
+		setShowScore(false);
+		setScore(0);
+		setShowAnswer(false);
+	};
 	return (
 		<div>
 			<div className='simplequiz'>
@@ -174,7 +313,11 @@ export default function SimpleQuiz() {
 							You scored {score} out of {quiz.length}!
 						</div>
 						<br />
-						<center><Link to="/">Back to Game Menu</Link></center>
+						<div className='restart-game'>
+							<center><button onClick={() => restartGame()}>Restart the Game</button></center>
+						</div>	
+						<br />
+							<center><Link to="/">Back to Game Menu</Link></center>
 					</div>
 				) : (
 					<div>
