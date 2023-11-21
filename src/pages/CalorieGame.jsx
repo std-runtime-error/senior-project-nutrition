@@ -28,14 +28,19 @@ export default function CalorieGame() {
 		{id: 1, src: "img/banana.png", description: 'banana'},
 		{id: 2, src: "img/orange.png", description: 'orange'},
 		{id: 3, src: "img/grape.png", description: 'grape'},
-		{id: 4, src: "img/spaghet.jpg", description: 'spaghetti'},
-		{id: 5, src: "img/mcdonaldsburger.jpg", description: 'burger'},
-		{id: 6, src: "img/broccoli_half_cup.jpg", description: "broccoli"},
-		{id: 7, src: "img/brussel_sprouts.jpg", description: "brussel sprouts"},
-		{id: 8, src: "img/carrots_one_cup.jpg", description: "carrots"},
-		{id: 9, src: "img/kale_one_cup.jpg", description: "kale"},
-		{id:10, src: "img/onion.jpg", description: "onion"},
 
+		{id: 4, src: "img/broccoli_half_cup.jpg", description: "broccoli"},
+		{id: 5, src: "img/brussel_sprouts.jpg", description: "brussel sprouts"},
+		{id: 6, src: "img/carrots_one_cup.jpg", description: "carrots"},
+		{id: 7, src: "img/kale_one_cup.jpg", description: "kale"},
+		{id: 8, src: "img/onion.jpg", description: "onion"},
+
+		{id: 9, src: "img/mcdonaldsburger.jpg", description: 'burger'}, 
+		{id: 10, src: "img/largedrink.jpg", description: 'Large Coke'}, 
+		{id: 11, src: "img/fries.jpg", description: 'Large Fries'}, 
+		{id: 12, src: "img/mocha.PNG", description: 'Dunkin Frozen Mocha Coffee w/ Cream'}, 
+		{id: 13, src: "img/nuggets.jpg", description: '20 piece nuggets + 3 ranch'}, 
+		{id: 14, src: "img/salad.jpg", description: 'McDonalds Southwest Salad w/ Crispy Chicken'}, 
 
 
 	];
@@ -45,14 +50,17 @@ export default function CalorieGame() {
 		{id: 1, answer: 60},
 		{id: 2, answer: 70},
 		{id: 3, answer: 80},
-		{id: 4, answer: 550},
-		{id: 5, answer: 800},
-		{id: 6, answer: 15}, //broccoli: 0.5 cup or 44g
-		{id: 7, answer: 60}, //brussel sprouts: 8 sprouts or 168g
-		{id: 8, answer: 52}, //carrots: 1 cup or 128g
-		{id: 9, answer: 36}, //kale: 1 cup or 130g
-		{id:10, answer: 41}, //onion: one medium onion or 94g
-
+		{id: 4, answer: 15}, //broccoli: 0.5 cup or 44g
+		{id: 5, answer: 60}, //brussel sprouts: 8 sprouts or 168g
+		{id: 6, answer: 52}, //carrots: 1 cup or 128g
+		{id: 7, answer: 36}, //kale: 1 cup or 130g
+		{id:8, answer: 41}, //onion: one medium onion or 94g
+		{id: 9, answer: 550},
+		{id: 10, answer: 380},
+		{id: 11, answer: 510},
+		{id: 12, answer: 800},
+		{id: 13, answer: 1160},
+		{id: 14, answer: 430},
 
 	];
 
@@ -70,13 +78,20 @@ export default function CalorieGame() {
 		1: 'Fruit',
 		2: 'Fruit',
 		3: 'Fruit',
-		4: 'Junk',
-		5: 'Junk',
+		
+		4: 'Vegetable',
+		5: 'Vegetable',
 		6: 'Vegetable',
 		7: 'Vegetable',
 		8: 'Vegetable',
-		9: 'Vegetable',
-		10: 'Vegetable'
+
+		9: 'Junk',
+		10: 'Junk',
+		11: 'Junk',
+		12: 'Junk',
+		13: 'Junk',
+		14: 'Junk',
+
 		// Add more mappings as needed
 	  };
 
