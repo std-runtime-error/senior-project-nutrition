@@ -27,6 +27,31 @@ function FoodReference(props){
             </div>
         ); 
     }
+
+    else if (props.game === "CalorieGameVegetable"){
+        return (
+            <div>
+                <div className="foodReference">
+                    <div className="foodReferenceHeader">
+                        &nbsp;&nbsp;&nbsp; Food Reference Sheet &nbsp;&nbsp;&nbsp; <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                    <div className="foodReferenceContents">
+                        <i class="fa-solid fa-circle-info"></i> Use the following information to help you make an educated guess! 
+                        <ul>
+                            <li> Lettuce, 1 Cup: 8 kcal </li>
+                            <li> Green Beans, 1 Cup: 44 kcal </li>
+                            <li> Tomatoe, 1 Medium: 22 kcal </li>
+                            <li> Zucchini, 1 Medium: 30 kcal </li>
+                            <li> Artichoke, 1 Medium: 64 kcal </li>
+                            <li> Cauliflower, 1 Cup: 25 kcal </li>
+                        </ul>
+                    </div>          
+                </div>
+            </div>
+        ); 
+    
+    }
+    
     else if (props.game === "CalorieGameJunk"){
         return (
             <div>
