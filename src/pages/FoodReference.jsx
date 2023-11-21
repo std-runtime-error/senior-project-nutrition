@@ -62,12 +62,13 @@ function FoodReference(props){
                     <div className="foodReferenceContents">
                         <i class="fa-solid fa-circle-info"></i> Use the following information to help you make an educated guess! 
                         <ul>
-                            <li> Test: 52 kcal </li>
-                            <li> Test: 89 kcal </li>
-                            <li> Test: 47 kcal </li>
-                            <li> Test: 62 kcal </li>
-                            <li> Test: 221 kcal </li>
-                            <li> Test : 250 kcal </li>
+                            <li> BigMac: 570 kcal </li>
+                            <li> Chick-fil-A: 440 kcal </li>
+                            <li> Large McFlurry: 803 kcal </li>
+                            <li> Chocolate Chip Clif Bar: 260 kcal </li>
+                            <li> Sausage McMuffin w/ Cheese: 400 kcal</li>
+                            <li> Dunkin Glazed Jelly Stick: 540 kcal</li>
+                            <li> Gordita Crunch Taco Bell: 500 kcal</li>
                         </ul>
                     </div>          
                 </div>
