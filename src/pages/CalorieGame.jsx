@@ -135,7 +135,7 @@ export default function CalorieGame() {
 				  <React.Fragment>
 					  <div className='question-section'>
 					  	<div className='question-count'>
-							  <span>Estimation {usedQuestions.length}</span>
+							  <span>{images[currentQuestion].description}</span>
 							</div>
 							<div className='print-image' align='center'>
 								<img src={images[currentQuestion].src} alt={images[currentQuestion].description} width='160' height='auto'/>
