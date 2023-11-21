@@ -105,7 +105,7 @@ export default function CalorieGame() {
 							  <span>Estimation {usedQuestions.length}</span>
 							</div>
 							<div className='print-image' align='center'>
-								<img src={images[currentQuestion].src} alt={images[currentQuestion].description} width='160' height='160'/>
+								<img src={images[currentQuestion].src} alt={images[currentQuestion].description} width='160' height='auto'/>
 							</div>
 							<div className='inputBox' align='center'>
 								<input onChange={checkChangedValue} value={inputText} placeholder='Type your answer'/>
