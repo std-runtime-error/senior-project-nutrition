@@ -76,6 +76,29 @@ function FoodReference(props){
         ); 
     
     }
+
+    else if (props.game === "CalorieGameCarbohydrate"){
+        return (
+            <div>
+                <div className="foodReference">
+                    <div className="foodReferenceHeader">
+                        &nbsp;&nbsp;&nbsp; Food Reference Sheet &nbsp;&nbsp;&nbsp; <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                    <div className="foodReferenceContents">
+                        <i class="fa-solid fa-circle-info"></i> Use the following information to help you make an educated guess! 
+                        <ul>
+                            <li> White rice, 1/4 Cup: 160 kcal </li>
+                            <li> Sweet potato, 1 Medium: 110 kcal </li>
+                            <li> Potato, 1 Potato(148g): 110 kcal </li>
+                            <li> White bread, 1 Slice: 98 kcal </li>
+                            <li> Doughnut, 1 Medium: 190 kcal </li>
+                        </ul>
+                    </div>          
+                </div>
+            </div>
+        ); 
+    
+    }
     //add more reference sheets here
 
 

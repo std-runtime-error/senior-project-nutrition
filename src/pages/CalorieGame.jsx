@@ -41,8 +41,12 @@ export default function CalorieGame() {
 		{id: 12, src: "img/mocha.PNG", description: 'Dunkin Frozen Mocha Coffee w/ Cream'}, 
 		{id: 13, src: "img/nuggets.jpg", description: '20 piece nuggets + 3 ranch'}, 
 		{id: 14, src: "img/salad.jpg", description: 'McDonalds Southwest Salad w/ Crispy Chicken'}, 
-
-
+		// Carbohydrate 
+		{id:15, src: "img/WhiteRice.jpeg", description: "WhiteRice"},
+		{id:16, src: "img/SweetPotato.png", description: "SweetPotato"},
+		{id:17, src: "img/Potato.png", description: "Potato"},
+		{id:18, src: "img/WhiteBread.jpg", description: "WhiteBread"},
+		{id:19, src: "img/Doughnut.png", description: "Doughnut"},
 	];
 
 	const estimations = [
@@ -61,6 +65,11 @@ export default function CalorieGame() {
 		{id: 12, answer: 800},
 		{id: 13, answer: 1160},
 		{id: 14, answer: 430},
+		{id:15, answer: 160}, // White rice
+		{id:16, answer: 110}, // Sweet Potato
+		{id:17, answer: 110}, // Potato
+		{id:18, answer: 98}, // White bread
+		{id:19, answer: 190} // Doughnut
 
 	];
 
@@ -92,6 +101,11 @@ export default function CalorieGame() {
 		13: 'Junk',
 		14: 'Junk',
 
+		15: 'Carbohydrate',
+		16: 'Carbohydrate',
+		17: 'Carbohydrate',
+		18: 'Carbohydrate',
+		19: 'Carbohydrate'
 		// Add more mappings as needed
 	  };
 
@@ -124,13 +138,29 @@ export default function CalorieGame() {
 			setShowScore(true);
 		}	
 	}; 
+	// Restart the game
+	const restartGame = () => {
+		setEstimationNum(getRandNumInRange(0,estimations.length));
+		setUsedQuestions([currentQuestion.valueOf]); 
+		setShowScore(false);
+		setScore(0);
+	};
 	return (
 		<div>
 			<div className='caloriegame'>
 			  {showScore ? (
+				  <div>
+				  	<Progressbar className= 'question-progress-bar' progress={100} /> 
 				  <div className='score-section'>
-					  You scored {score} out of {estimations.length*pointsPerQuestion}
+					You scored {score} out of {estimations.length}!
 				  </div>
+				  <br />
+				  <div className='restart-game'>
+					<center><button onClick={() => restartGame()}>Restart the Game</button></center>
+				  </div>	
+				  <br />
+					<center><Link to="/">Back to Game Menu</Link></center>
+			  </div>
 			  ) : (
 				  <React.Fragment>
 					  <div className='question-section'>
