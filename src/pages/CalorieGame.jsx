@@ -12,7 +12,7 @@ export default function CalorieGame() {
 	  //Returns a random int corresponding to a question that hasn't been displayed yet.
 	  //If all questions have been displayed, returns (# of questions + 1)
 	  function getRandomQuestion() {
-		if (usedQuestions.length == estimations.length)
+		if (usedQuestions.length === estimations.length)
 			return estimations.length+1;
 		let x = getRandNumInRange();
 		while(usedQuestions.includes(x))
@@ -24,27 +24,57 @@ export default function CalorieGame() {
 	}
 	
 	const images = [
-		{id: 1, src: "img/apple.png", description: 'apple'},
-		{id: 2, src: "img/banana.png", description: 'banana'},
-		{id: 3, src: "img/orange.png", description: 'orange'},
-		{id: 4, src: "img/grape.png", description: 'grape'},
-		{id: 5, src: "img/spaghet.jpg", description: 'spaghetti'},
-		{id: 6, src: "img/mcdonaldsburger.jpg", description: 'burger'} 
+		{id: 0, src: "img/apple.png", description: 'apple'},
+		{id: 1, src: "img/banana.png", description: 'banana'},
+		{id: 2, src: "img/orange.png", description: 'orange'},
+		{id: 3, src: "img/grape.png", description: 'grape'},
 
+		{id: 4, src: "img/broccoli_half_cup.jpg", description: "broccoli"},
+		{id: 5, src: "img/brussel_sprouts.jpg", description: "brussel sprouts"},
+		{id: 6, src: "img/carrots_one_cup.jpg", description: "carrots"},
+		{id: 7, src: "img/kale_one_cup.jpg", description: "kale"},
+		{id: 8, src: "img/onion.jpg", description: "onion"},
+
+		{id: 9, src: "img/mcdonaldsburger.jpg", description: 'burger'}, 
+		{id: 10, src: "img/largedrink.jpg", description: 'Large Coke'}, 
+		{id: 11, src: "img/fries.jpg", description: 'Large Fries'}, 
+		{id: 12, src: "img/mocha.PNG", description: 'Dunkin Frozen Mocha Coffee w/ Cream'}, 
+		{id: 13, src: "img/nuggets.jpg", description: '20 piece nuggets + 3 ranch'}, 
+		{id: 14, src: "img/salad.jpg", description: 'McDonalds Southwest Salad w/ Crispy Chicken'}, 
+		// Carbohydrate 
+		{id:15, src: "img/WhiteRice.jpeg", description: "WhiteRice"},
+		{id:16, src: "img/SweetPotato.png", description: "SweetPotato"},
+		{id:17, src: "img/Potato.png", description: "Potato"},
+		{id:18, src: "img/WhiteBread.jpg", description: "WhiteBread"},
+		{id:19, src: "img/Doughnut.png", description: "Doughnut"},
 	];
 
 	const estimations = [
-		{id: 1, answer: 50},
-		{id: 2, answer: 60},
-		{id: 3, answer: 70},
-		{id: 4, answer: 80},
-		{id: 5, answer: 550},
-		{id: 6, answer: 800},
+		{id: 0, answer: 50},
+		{id: 1, answer: 60},
+		{id: 2, answer: 70},
+		{id: 3, answer: 80},
+		{id: 4, answer: 15}, //broccoli: 0.5 cup or 44g
+		{id: 5, answer: 60}, //brussel sprouts: 8 sprouts or 168g
+		{id: 6, answer: 52}, //carrots: 1 cup or 128g
+		{id: 7, answer: 36}, //kale: 1 cup or 130g
+		{id:8, answer: 41}, //onion: one medium onion or 94g
+		{id: 9, answer: 550},
+		{id: 10, answer: 380},
+		{id: 11, answer: 510},
+		{id: 12, answer: 800},
+		{id: 13, answer: 1160},
+		{id: 14, answer: 430},
+		{id:15, answer: 160}, // White rice
+		{id:16, answer: 110}, // Sweet Potato
+		{id:17, answer: 110}, // Potato
+		{id:18, answer: 98}, // White bread
+		{id:19, answer: 190} // Doughnut
 
 	];
 
 	const [currentQuestion, setEstimationNum] = useState(getRandNumInRange(0, estimations.length));
-	const [usedQuestions, setUsedQuestions] = useState([currentQuestion.valueOf]);
+	const [usedQuestions, setUsedQuestions] = useState([currentQuestion]);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 	const [inputText, setValue] = useState('');
@@ -52,16 +82,54 @@ export default function CalorieGame() {
     	setValue(e.target.value);
   	};
 
-	const clickEnter = () => {
-		//Set the 5% margin
-		let marginOfError = 0.05;
-		let lowerVal = estimations[currentQuestion].answer * (1-marginOfError);
-		let upperVal = estimations[currentQuestion].answer * (1+marginOfError);
+	  const foodTypeMapping = {
+		0: 'Fruit',
+		1: 'Fruit',
+		2: 'Fruit',
+		3: 'Fruit',
+		
+		4: 'Vegetable',
+		5: 'Vegetable',
+		6: 'Vegetable',
+		7: 'Vegetable',
+		8: 'Vegetable',
 
-		if (inputText >= lowerVal && inputText <= upperVal) {
-			setScore(score + 1);
-		}
+		9: 'Junk',
+		10: 'Junk',
+		11: 'Junk',
+		12: 'Junk',
+		13: 'Junk',
+		14: 'Junk',
+
+		15: 'Carbohydrate',
+		16: 'Carbohydrate',
+		17: 'Carbohydrate',
+		18: 'Carbohydrate',
+		19: 'Carbohydrate'
+		// Add more mappings as needed
+	  };
+
+	  function calculatePoints(guess, trueAnswer, marginOfErrorForNone) {
+		const minVal = (trueAnswer*marginOfErrorForNone);  
+		guess /= minVal;
+		trueAnswer /= minVal;
+		const percentageDifference = Math.round(Math.abs((guess - trueAnswer))*100)/100;
+	//console.log(`Guess: ${guess}, true answer: ${trueAnswer}, percent diff: ${percentageDifference}`);
+		const points = Math.round(pointsPerQuestion * (1 - Math.pow(percentageDifference, 2)));
+		return Math.max(points, 0);
+	  }
+
+	const pointsPerQuestion = 10;
+	const clickEnter = () => {
+
+		let marginOfErrorForNone = 0.5;
+
+		let pointsEarned = calculatePoints(inputText,estimations[currentQuestion].answer,marginOfErrorForNone)
+		setScore(score + pointsEarned);
+
 		const nextQuestion = getRandomQuestion();
+		setValue('');
+
 		if (nextQuestion < estimations.length) {
 			setEstimationNum(nextQuestion);
 		}
@@ -70,21 +138,37 @@ export default function CalorieGame() {
 			setShowScore(true);
 		}	
 	}; 
+	// Restart the game
+	const restartGame = () => {
+		setEstimationNum(getRandNumInRange(0,estimations.length));
+		setUsedQuestions([currentQuestion.valueOf]); 
+		setShowScore(false);
+		setScore(0);
+	};
 	return (
 		<div>
 			<div className='caloriegame'>
 			  {showScore ? (
+				  <div>
+				  	<Progressbar className= 'question-progress-bar' progress={100} /> 
 				  <div className='score-section'>
-					  You scored {score} out of {estimations.length}
+					You scored {score} out of {estimations.length}!
 				  </div>
+				  <br />
+				  <div className='restart-game'>
+					<center><button onClick={() => restartGame()}>Restart the Game</button></center>
+				  </div>	
+				  <br />
+					<center><Link to="/">Back to Game Menu</Link></center>
+			  </div>
 			  ) : (
 				  <React.Fragment>
 					  <div className='question-section'>
 					  	<div className='question-count'>
-							  <span>Estimation {usedQuestions.length}</span>
+							  <span>{images[currentQuestion].description}</span>
 							</div>
 							<div className='print-image' align='center'>
-								<img src={images[currentQuestion].src} alt={images[currentQuestion].description} width='160' height='160'/>
+								<img src={images[currentQuestion].src} alt={images[currentQuestion].description} width='160' height='auto'/>
 							</div>
 							<div className='inputBox' align='center'>
 								<input onChange={checkChangedValue} value={inputText} placeholder='Type your answer'/>
@@ -101,7 +185,7 @@ export default function CalorieGame() {
 				)}
 			</div>
 		<br/>
-		<FoodReference game="CalorieGameFruit"/>
+		<FoodReference game={"CalorieGame" + foodTypeMapping[estimations[currentQuestion].id]} />
 		</div>
 	);
 }
