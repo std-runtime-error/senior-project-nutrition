@@ -15,12 +15,11 @@ function FoodReference(props){
                     <div className="foodReferenceContents">
                         <i class="fa-solid fa-circle-info"></i> Use the following information to help you make an educated guess! 
                         <ul>
-                            <li> Apple: 52 kcal </li>
-                            <li> Banana: 89 kcal </li>
-                            <li> Orange: 47 kcal </li>
-                            <li> Grape: 62 kcal </li>
-                            <li> Spaghetti: 221 kcal </li>
-                            <li> McDonalds Burger: 250 kcal </li>
+                            <li> Blueberries: 80 cal / cup </li>
+                            <li> Kiwi:  42 cal / 2 fruit </li>
+                            <li> Melon: 45 cal / cup </li>
+                            <li> Pineapple: 43 cal / cup </li>
+                            <li> Lime: 40 cal / 2 fruit </li>
                         </ul>
                     </div>          
                 </div>
