@@ -357,3 +357,39 @@ background-color: var(--correctAnswer);
   font-size: 15px;
   word-wrap: break-word;
 }
+
+.foodlabelgame{
+  background-color: var(--windowBackground);
+  min-width: 550px;
+  max-width: 700px;
+  min-height: 200px;
+  height: min-content;
+  border-radius: 15px;
+  padding: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
+  border: 3px solid var(--windowBorder);
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: 10px 10px 3px #1c1c1cb8;
+
+}
+.foodlabelintrosection {
+  background-color: var(--windowBackground);
+  min-width: 550px;
+  min-height: 200px;
+  height: min-content;
+  border-radius: 15px;
+  padding: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
+  border: 3px solid var(--windowBorder);
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: 10px 10px 3px #1c1c1cb8;
+}
+.game-instructions{
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 2fr 1.1fr;
+}
