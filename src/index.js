@@ -6,6 +6,7 @@ import Layout from "./pages/Layout";
 import GameMenu from "./pages/GameMenu";
 import SimpleQuiz from './pages/SimpleQuiz';
 import CalorieGame from './pages/CalorieGame';
+import FoodLabelGame from './pages/FoodLabelGame';
 
 export default function App() { 
 
@@ -17,6 +18,7 @@ export default function App() {
                   <Route index element={<GameMenu />} />  
                   <Route path="simplequiz" element={<SimpleQuiz />} />
                   <Route path="caloriegame" element={<CalorieGame />} />
+                  <Route path="foodlabelgame" element={<FoodLabelGame />} />
                   </Route>       
                   </Routes>  
       </BrowserRouter>  
