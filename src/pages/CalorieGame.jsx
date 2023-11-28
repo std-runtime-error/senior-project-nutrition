@@ -25,17 +25,17 @@ export default function CalorieGame() {
 	
 	const images = [
 		//fruit
-		{id: 0, src: "img/apple.png", description: 'apple'},
-		{id: 1, src: "img/banana.png", description: 'banana'},
-		{id: 2, src: "img/orange.png", description: 'orange'},
-		{id: 3, src: "img/grape.png", description: 'grape' },
-		{id: 4, src: "img/watermelon.png", description: 'watermelon'},
+		{id: 0, src: "img/apple.png", description: '1 Medium Apple'},
+		{id: 1, src: "img/banana.png", description: '1 Medium Banana'},
+		{id: 2, src: "img/orange.png", description: '1 Medium Orange'},
+		{id: 3, src: "img/grape.png", description: '1 Cup of Grape' },
+		{id: 4, src: "img/watermelon.png", description: '1 Cup of Diced Watermelon'},
 
-		{id: 5, src: "img/broccoli_half_cup.jpg", description: "broccoli"},
-		{id: 6, src: "img/brussel_sprouts.jpg", description: "brussel sprouts"},
-		{id: 7, src: "img/carrots_one_cup.jpg", description: "carrots"},
-		{id: 8, src: "img/kale_one_cup.jpg", description: "kale"},
-		{id: 9, src: "img/onion.jpg", description: "onion"},
+		{id: 5, src: "img/broccoli_half_cup.jpg", description: "1 Cup of Broccolis"},
+		{id: 6, src: "img/brussel_sprouts.jpg", description: "1 Cup of Brussel Sprouts"},
+		{id: 7, src: "img/carrots_one_cup.jpg", description: "1 Cup of Carrots"},
+		{id: 8, src: "img/kale_one_cup.jpg", description: "1 Cup of Kale"},
+		{id: 9, src: "img/onion.jpg", description: "1 Medium Onion"},
 
 		{id: 10, src: "img/mcdonaldsburger.jpg", description: 'McDonalds Double Quarter Pounder'}, 
 		{id: 11, src: "img/largedrink.jpg", description: 'Large Coke (32 oz)'}, 
@@ -44,11 +44,11 @@ export default function CalorieGame() {
 		{id: 14, src: "img/nuggets.jpg", description: '20 piece nuggets + 3 ranch'}, 
 		{id: 15, src: "img/salad.jpg", description: 'McDonalds Southwest Salad w/ Crispy Chicken'}, 
 		// Carbohydrate 
-		{id:16, src: "img/WhiteRice.jpeg", description: "1 Cup of WhiteRice"},
-		{id:17, src: "img/SweetPotato.png", description: "1/2 SweetPotato"},
-		{id:18, src: "img/Potato.png", description: "4 Potatoes"},
-		{id:19, src: "img/WhiteBread.jpg", description: "3 Slices of WhiteBread"},
-		{id:20, src: "img/Doughnut.png", description: "5 Doughnuts"},
+		{id:16, src: "img/WhiteRice.jpeg", description: "1/2 Cup of WhiteRice"},
+		{id:17, src: "img/SweetPotato.png", description: "1 Medium SweetPotato"},
+		{id:18, src: "img/Potato.png", description: "1 Medium Potato"},
+		{id:19, src: "img/WhiteBread.jpg", description: "1 Slice of WhiteBread"},
+		{id:20, src: "img/Doughnut.png", description: "1 Medium Doughnut"},
 	];
 
 	const estimations = [
@@ -70,11 +70,11 @@ export default function CalorieGame() {
 		{id: 13, answer: 800},
 		{id: 14, answer: 1160},
 		{id: 15, answer: 430},
-		{id: 16, answer: 640}, // 1 cup of White rice
-		{id: 17, answer: 55}, // 1/2 Sweet Potato
-		{id: 18, answer: 440}, // 4 Potatoes
-		{id: 19, answer: 294}, // 3 slices of White bread
-		{id: 20, answer: 950} // 5 Doughnuts
+		{id: 16, answer: 160}, // 1/2 cup of White rice
+		{id: 17, answer: 110}, // 1 Sweet Potato
+		{id: 18, answer: 110}, // 1 Potatoe
+		{id: 19, answer: 98}, // 1 slice of White bread
+		{id: 20, answer: 190} // 1 Doughnut
 
 	];
 
