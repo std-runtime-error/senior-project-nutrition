@@ -44,11 +44,11 @@ export default function CalorieGame() {
 		{id: 14, src: "img/nuggets.jpg", description: '20 piece nuggets + 3 ranch'}, 
 		{id: 15, src: "img/salad.jpg", description: 'McDonalds Southwest Salad w/ Crispy Chicken'}, 
 		// Carbohydrate 
-		{id:16, src: "img/WhiteRice.jpeg", description: "WhiteRice"},
-		{id:17, src: "img/SweetPotato.png", description: "SweetPotato"},
-		{id:18, src: "img/Potato.png", description: "Potato"},
-		{id:19, src: "img/WhiteBread.jpg", description: "WhiteBread"},
-		{id:20, src: "img/Doughnut.png", description: "Doughnut"},
+		{id:16, src: "img/WhiteRice.jpeg", description: "1 Cup of WhiteRice"},
+		{id:17, src: "img/SweetPotato.png", description: "1/2 SweetPotato"},
+		{id:18, src: "img/Potato.png", description: "4 Potatoes"},
+		{id:19, src: "img/WhiteBread.jpg", description: "3 Slices of WhiteBread"},
+		{id:20, src: "img/Doughnut.png", description: "5 Doughnuts"},
 	];
 
 	const estimations = [
@@ -70,11 +70,11 @@ export default function CalorieGame() {
 		{id: 13, answer: 800},
 		{id: 14, answer: 1160},
 		{id: 15, answer: 430},
-		{id: 16, answer: 160}, // White rice
-		{id: 17, answer: 110}, // Sweet Potato
-		{id: 18, answer: 110}, // Potato
-		{id: 19, answer: 98}, // White bread
-		{id: 20, answer: 190} // Doughnut
+		{id: 16, answer: 640}, // 1 cup of White rice
+		{id: 17, answer: 55}, // 1/2 Sweet Potato
+		{id: 18, answer: 440}, // 4 Potatoes
+		{id: 19, answer: 294}, // 3 slices of White bread
+		{id: 20, answer: 950} // 5 Doughnuts
 
 	];
 
