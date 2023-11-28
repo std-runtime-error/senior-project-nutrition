@@ -37,10 +37,10 @@ export default function CalorieGame() {
 		{id: 8, src: "img/kale_one_cup.jpg", description: "kale"},
 		{id: 9, src: "img/onion.jpg", description: "onion"},
 
-		{id: 10, src: "img/mcdonaldsburger.jpg", description: 'burger'}, 
-		{id: 11, src: "img/largedrink.jpg", description: 'Large Coke'}, 
+		{id: 10, src: "img/mcdonaldsburger.jpg", description: 'McDonalds Double Quarter Pounder'}, 
+		{id: 11, src: "img/largedrink.jpg", description: 'Large Coke (32 oz)'}, 
 		{id: 12, src: "img/fries.jpg", description: 'Large Fries'}, 
-		{id: 13, src: "img/mocha.PNG", description: 'Dunkin Frozen Mocha Coffee w/ Cream'}, 
+		{id: 13, src: "img/mocha.PNG", description: 'Dunkin Frozen Mocha Coffee w/ Cream (32 oz)'}, 
 		{id: 14, src: "img/nuggets.jpg", description: '20 piece nuggets + 3 ranch'}, 
 		{id: 15, src: "img/salad.jpg", description: 'McDonalds Southwest Salad w/ Crispy Chicken'}, 
 		// Carbohydrate 
