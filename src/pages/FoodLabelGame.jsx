@@ -32,6 +32,8 @@ export default function FoodLabelGame() {
 		{id: 0, src: 'img/nutrition-label-banana.png', description: 'banana'},
 		{id: 1, src: 'img/nutrition-label-apple.png', description: 'apple'},
 		{id: 2, src: 'img/nutrition-label-pear.png', description: 'pear'},
+		{id: 3, src: 'img/nutrition-label-banana.png', description: 'banana'},
+		{id: 4, src: 'img/nutrition-label-apple.png', description: 'apple'},
 	]
 	  
 	const quiz = [
@@ -61,6 +63,23 @@ export default function FoodLabelGame() {
 				{answer: '0.3', checkCorrect: false}, 
 			],
 			explanation: 'According to the food label, each medium pear has 101 calories. If you ate 3 medium pears, you would consume 303 calories.',
+		},
+		{
+		question: 'Using this food label, how much Vitamin A does one medium Banana have? (Hint: Vitamin A is not listed on the label)',
+			answerList: [
+				{answer: 'Little/None', checkCorrect: true},
+				{answer: '1mcg', checkCorrect: false}, 
+				{answer: '0.3mg', checkCorrect: false}, 
+			],
+			explanation: 'Vitamin A is not listed on the food label, so bananas must have very little or no Vitamin A (depending on rounding)',
+		},
+		{
+		question: 'This food label says that one medium Apple has 0.3g of Total Fat. Is this value exact?',
+			answerList: [
+				{answer: 'Yes, exact.', checkCorrect: false},
+				{answer: 'No, not exact.', checkCorrect: true}, 
+			],
+			explanation: 'The nutrients on the food label are rounded up or down, and are not exact.',
 		}
 	];
 	const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -144,7 +163,11 @@ export default function FoodLabelGame() {
 									In this example, there are 95 calories in one medium apple.
 									<br/><br/>
 									The rest of the label shows each the nutrients in the food.
-									For example, one medium apple has 0.3 grams of total fat.
+									For example, one medium apple has 0.3 grams of total fat. These
+									values may be rounded up or down (sometimes even to zero!). If
+									a nutrient is not listed on the label, it means that the food
+									has none or very little of that nutrient.
+									<br/><br/>
 									Notice the "% Daily Value" column. This displays estimated
 									percentages of how much a serving would satisfy a person's
 									daily nutrient needs. These percentages are based on a 2,000
@@ -166,7 +189,7 @@ export default function FoodLabelGame() {
 							</div>
 							<div className="game-instructions">
 								<div className='question-text'>{quiz[currentQuestion].question}</div>
-								<img src={images[currentQuestion].src} alt={images[currentQuestion].description} width='250' height='auto'/>
+								<img src={images[currentQuestion].src} alt={images[currentQuestion].description} width='300' height='auto'/>
 							</div>
 						</div>
 						<div className='answer-section' style={{display: showIntro ? 'block' : 'none'}}>
