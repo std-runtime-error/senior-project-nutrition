@@ -81,6 +81,8 @@ export default function CalorieGame() {
 	const [currentQuestion, setEstimationNum] = useState(getRandNumInRange(0, estimations.length));
 	const [usedQuestions, setUsedQuestions] = useState([currentQuestion]);
 	const [showScore, setShowScore] = useState(false);
+	const [pointsAwarded, setPointsAwarded] = useState(0);
+	const [showingAnswer, setShowingAnswer] = useState(false);
 	const [score, setScore] = useState(0);
 	const [inputText, setValue] = useState('');
 	const checkChangedValue = (e) => {
@@ -128,21 +130,34 @@ export default function CalorieGame() {
 	const pointsPerQuestion = 10;
 	const clickEnter = () => {
 
-		let marginOfErrorForNone = 0.5;
+		if (!showingAnswer) {
+			let marginOfErrorForNone = 0.5;
 
-		let pointsEarned = calculatePoints(inputText,estimations[currentQuestion].answer,marginOfErrorForNone)
-		setScore(score + pointsEarned);
+			let pointsEarned = calculatePoints(inputText,estimations[currentQuestion].answer,marginOfErrorForNone)
+			
+			setPointsAwarded(pointsEarned);
+			setScore(score + pointsEarned);
 
-		const nextQuestion = getRandomQuestion();
-		setValue('');
+				
+			document.documentElement.style.setProperty("--explanationTransition", "0.7s");
+			document.documentElement.style.setProperty("--explanationOpacity", "1");
+			setShowingAnswer(true);
+		} else {
+			setPointsAwarded(0);
+			const nextQuestion = getRandomQuestion();
+			setValue('');
 
-		if (nextQuestion < estimations.length) {
-			setEstimationNum(nextQuestion);
+			if (nextQuestion < estimations.length) {
+				setEstimationNum(nextQuestion);
+			}
+			setValue('');
+			if (usedQuestions.length == estimations.length) {
+				setShowScore(true);
+			}	
+			document.documentElement.style.setProperty("--explanationTransition", "0s");
+			document.documentElement.style.setProperty("--explanationOpacity", "");
+			setShowingAnswer(false);
 		}
-		setValue('');
-		if (usedQuestions.length == estimations.length) {
-			setShowScore(true);
-		}	
 	}; 
 	// Restart the game
 	const restartGame = () => {
@@ -150,6 +165,8 @@ export default function CalorieGame() {
 		setUsedQuestions([currentQuestion.valueOf]); 
 		setShowScore(false);
 		setScore(0);
+		setShowingAnswer(false);
+		setPointsAwarded(0);
 	};
 	return (
 		<div>
@@ -158,7 +175,7 @@ export default function CalorieGame() {
 				  <div>
 				  	<Progressbar className= 'question-progress-bar' progress={100} /> 
 				  <div className='score-section'>
-					You scored {score} out of {estimations.length}!
+					You scored {score} out of {estimations.length * 10}!
 				  </div>
 				  <br />
 				  <div className='restart-game'>
@@ -181,11 +198,26 @@ export default function CalorieGame() {
 							</div>
 							<br/>
 						<div className='enter-button'>
-							<button onClick={() => clickEnter(inputText)}>Enter</button>
+							<button onClick={() => clickEnter(inputText)}>
+							{showingAnswer &&
+							(<div>
+								Next
+							</div>)
+						} {!showingAnswer &&
+							(<div>
+								Enter
+							</div>)
+						}
+								</button>
 						</div>
 						<div className='showInput'>
 							<b>Your Input Value: {inputText} kcal</b>
 						</div>
+						</div>
+						<div className='answer-explanation'>
+							<h3><i class="fa-solid fa-circle-info fa-xl"></i>&nbsp;&nbsp;Answer:</h3>
+							<div>Points awarded: {pointsAwarded}  / 10 !</div>
+							<div>Correct answer: {estimations[currentQuestion].answer}</div>
 						</div>
 					</React.Fragment>
 				)}
