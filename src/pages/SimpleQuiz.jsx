@@ -137,7 +137,7 @@ export default function SimpleQuiz() {
 				{answer: 'Maintains bowel health', checkCorrect: false},
 				{answer: 'All of the above', checkCorrect: true},
 			],
-			explanation: '',
+			explanation: 'Fiber activates intestinal exercise, which helps intestinal health. It also greatly helps people's health by lowering blood sugar and cholesterol levels.',
 		},
 		{
 			question: 'Why is Olive oil healthier than butter?',
@@ -147,7 +147,7 @@ export default function SimpleQuiz() {
 				{answer: 'It’s made of unsaturated fats instead of saturated', checkCorrect: true},
 				{answer: 'It has less fat', checkCorrect: false},
 			],
-			explanation: '',
+			explanation: 'Olive oil is high in calories and high in fat compared to butter. However, because it is composed of unsaturated fats, it may be healthier for humans than butter composed of saturated fats.',
 		},
 		{
 			question: 'What is an advantage of Fast Food?',
@@ -157,7 +157,7 @@ export default function SimpleQuiz() {
 				{answer: 'High Sodium', checkCorrect: false},
 				{answer: 'Raise Cholesterol', checkCorrect: false},
 			],
-			explanation: '',
+			explanation: 'Fast food is not very good nutritionally. However, it can be a great advantage for busy modern people because it cooks quickly as its name suggests.',
 		},
 		{
 			question: 'What are the reasons to maintain proper vitamin B12 levels in your diet?',
@@ -167,7 +167,7 @@ export default function SimpleQuiz() {
 				{answer: 'Formation of red blood cells', checkCorrect: false},
 				{answer: 'All of the above', checkCorrect: true},
 			],
-			explanation: '',
+			explanation: 'Vitamin B12 has a good effect on the human body. This helps to produce red blood cells and DNA, which helps the health of blood and nerve cells.',
 		},
 		{
 			question: 'What are the reasons to maintain proper vitamin C levels in your diet?',
@@ -177,7 +177,7 @@ export default function SimpleQuiz() {
 				{answer: 'Protection against skin wrinkling', checkCorrect: false},
 				{answer: 'All of the above', checkCorrect: true},
 			],
-			explanation: '',
+			explanation: 'Vitamin C has a good effect on the human body. This can improve wrinkles by preventing aging on the skin, improving the ability of the immune system and being a good preventive measure against cardiovascular disease.',
 		},
 		{
 			question: 'Raisins have more carbs than Oats (per oz)',
@@ -185,17 +185,7 @@ export default function SimpleQuiz() {
 				{answer: 'True', checkCorrect: true},
 				{answer: 'False', checkCorrect: false},
 			],
-			explanation: '',
-		},
-		{
-			question: 'Raisins have more carbs than Oats (per oz)',
-			answerList: [
-				{answer: 'Milk', checkCorrect: false},
-				{answer: 'Spinach', checkCorrect: false},
-				{answer: 'Oranges', checkCorrect: false},
-				{answer: 'Bread', checkCorrect: true},
-			],
-			explanation: '',
+			explanation: 'Raisins has 22g of carbs per oz. Then, oats has 18g of carbs per oz.',
 		},
 		{
 			question: 'Wasabi and Soy Sauce both have what in common?',
@@ -205,7 +195,7 @@ export default function SimpleQuiz() {
 				{answer: 'High cholesterol', checkCorrect: false},
 				{answer: 'High fat', checkCorrect: false},
 			],
-			explanation: '',
+			explanation: 'Sodium accounts for a significant proportion of the total nutrients in wasabi and soy sauce, which vary from product to product but generally account for an average of 20 to 30%.',
 		},
 		{
 			question: 'HDL cholesterol (good cholesterol) is raised by which of the following foods',
@@ -225,7 +215,7 @@ export default function SimpleQuiz() {
 				{answer: '5 g', checkCorrect: false},
 				{answer: '1 g', checkCorrect: false},
 			],
-			explanation: '',
+			explanation: 'The U.S. Food and Drug Administration recommends refraining from eating trans fats as much as possible. As evidenced by this, the recommended daily intake of trans fat is 0 g.',
 		},
 		{
 			question: 'What is not correct as a symptom that occurs in the body when protein is lacking?',
@@ -235,7 +225,7 @@ export default function SimpleQuiz() {
 				{answer: 'thinning of hair', checkCorrect: false},
 				{answer: 'deterioration of vision', checkCorrect: true},
 			],
-			explanation: '',
+			explanation: 'Protein is an important nutrient that makes up the body. When protein is lacking, muscle mass decreases, skin elasticity decreases, and hair becomes thinner and hair loss is likely to occur.',
 		},
 		{
 			question: 'What is not a symptom of excessive caffeine intake?',
@@ -245,7 +235,7 @@ export default function SimpleQuiz() {
 				{answer: 'Increasing appetite', checkCorrect: true},
 				{answer: 'excessive gastric acid', checkCorrect: false},
 			],
-			explanation: '',
+			explanation: 'Excessive intake of caffeine is easy to develop insomnia due to an increase in heart rate, and it is bad for stomach health because it produces excessive stomach acid.',
 		},
 		{
 			question: 'What is a possible advantage of high carb diets?',
@@ -265,7 +255,7 @@ export default function SimpleQuiz() {
 				{answer: 'Fatigue/Lower quality of sleep', checkCorrect: false},
 				{answer: 'All of the above', checkCorrect: true},
 			],
-			explanation: '',
+			explanation: 'Vitamin D is a vitamin that is usually produced when exposed to sunlight. However, it is easy to become vitamin D deficient due to the lack of time to sunbathe modern people. This weakens the immune system and reduces muscle mass, making it easy to feel tired and exhausted.',
 		},
 	];
 	const [selectedAnswer, setSelectedAnswer] = useState(null);
