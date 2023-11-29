@@ -137,7 +137,7 @@ export default function SimpleQuiz() {
 				{answer: 'Maintains bowel health', checkCorrect: false},
 				{answer: 'All of the above', checkCorrect: true},
 			],
-			explanation: 'Fiber activates intestinal exercise, which helps intestinal health. It also greatly helps people's health by lowering blood sugar and cholesterol levels.',
+			explanation: 'Fiber activates intestinal exercise, which helps intestinal health. It also greatly helps health of people by lowering blood sugar and cholesterol levels.',
 		},
 		{
 			question: 'Why is Olive oil healthier than butter?',
