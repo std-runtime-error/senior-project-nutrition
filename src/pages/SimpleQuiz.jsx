@@ -205,7 +205,7 @@ export default function SimpleQuiz() {
 				{answer: 'Low-fat milk', checkCorrect: false},
 				{answer: 'Potatoes', checkCorrect: false},
 			],
-			explanation: '',
+			explanation: 'Oatmeal has an excellent effect in preventing cardiovascular disease by lowering LDL cholesterol levels and increasing HDL cholesterol levels when consumed.',
 		},
 		{
 			question: 'What is the ideal amount of trans-fat you should ingest daily?',
@@ -238,14 +238,14 @@ export default function SimpleQuiz() {
 			explanation: 'Excessive intake of caffeine is easy to develop insomnia due to an increase in heart rate, and it is bad for stomach health because it produces excessive stomach acid.',
 		},
 		{
-			question: 'What is a possible advantage of high carb diets?',
+			question: 'What is not a disadvantage of high carb diets?',
 			answerList: [
-				{answer: 'Increased weight gain', checkCorrect: true},
+				{answer: 'Increased weight gain', checkCorrect: false},
 				{answer: 'Increased risk of cardiovascular disease', checkCorrect: false},
-				{answer: 'Lower quality of sleep', checkCorrect: false},
-				{answer: 'Fatigue and inconsistent energy levels', checkCorrect: false},
+				{answer: 'Skin disease', checkCorrect: false},
+				{answer: 'Fatigue and inconsistent energy levels', checkCorrect: true},
 			],
-			explanation: '',
+			explanation: 'Excessive intake of carbohydrates increases weight, increasing weight, and increasing the incidence of skin and cardiovascular disease.',
 		},
 		{
 			question: 'What are the side effects of low Vitamin D levels?',
