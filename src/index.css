@@ -84,6 +84,7 @@ body {
   min-width: 550px;
   min-height: 200px;
   height: min-content;
+  max-width: 700px;
   border-radius: 15px;
   padding: 30px;
   padding-left: 60px;
@@ -180,7 +181,7 @@ background-color: var(--correctAnswer);
   justify-content: space-evenly;
   box-shadow: 10px 10px 3px #1c1c1cb8;
   position: absolute;
-  right: calc(50vw - 800px);
+  right: calc(50vw - 830px);
   top: calc(50vh - 160px);
   margin-right: 0;
 }
@@ -301,6 +302,7 @@ background-color: var(--correctAnswer);
   min-width: 550px;
   min-height: 200px;
   height: min-content;
+  max-width: 700px;
   border-radius: 15px;
   padding: 30px;
   padding-left: 60px;
