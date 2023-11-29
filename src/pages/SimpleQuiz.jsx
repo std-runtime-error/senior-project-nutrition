@@ -16,7 +16,7 @@ export default function SimpleQuiz() {
 	  //Returns a random int corresponding to a question that hasn't been displayed yet.
 	  //If all questions have been displayed, returns (# of questions + 1)
 	  function getRandomQuestion() {
-		if (usedQuestions.length === quiz.length)
+		if (usedQuestions.length === quizLength)
 			return quiz.length+1;
 		let x = getRandNumInRange();
 		while(usedQuestions.includes(x))
@@ -258,6 +258,7 @@ export default function SimpleQuiz() {
 			explanation: 'Vitamin D is a vitamin that is usually produced when exposed to sunlight. However, it is easy to become vitamin D deficient due to the lack of time to sunbathe modern people. This weakens the immune system and reduces muscle mass, making it easy to feel tired and exhausted.',
 		},
 	];
+	const quizLength = 5;
 	const [selectedAnswer, setSelectedAnswer] = useState(null);
 	const [questionNumber, setQuestionNumber] = useState(0);
 	const [currentQuestion, setCurrentQuestion] = useState(getRandNumInRange(0,quiz.length));
@@ -283,7 +284,7 @@ export default function SimpleQuiz() {
 		if (nextQuestion < quiz.length) {
 			setQuestionNumber(questionNumber+1);
 			setCurrentQuestion(nextQuestion);
-			setProgressPercent(((questionNumber+1)/quiz.length)*100);
+			setProgressPercent(((questionNumber+1)/quizLength)*100);
 			setShowAnswer(false);
 			setSelectedAnswer(null);
 		} else {
@@ -294,12 +295,15 @@ export default function SimpleQuiz() {
 	};
 
 	const restartGame = () => {
+		setSelectedAnswer(null);
 		setQuestionNumber(0);
 		setCurrentQuestion(getRandNumInRange(0,quiz.length));
-		setUsedQuestions([currentQuestion.valueOf]); 
+		setUsedQuestions([currentQuestion]); 
 		setShowScore(false);
 		setScore(0);
+		setProgressPercent(0);
 		setShowAnswer(false);
+
 	};
 
 	return (
@@ -309,7 +313,7 @@ export default function SimpleQuiz() {
 					<div>
 						<Progressbar className= 'question-progress-bar' progress={100} /> 
 						<div className='score-section'>
-							You scored {score} out of {quiz.length}!
+							You scored {score} out of {quizLength}!
 						</div>
 						<br />
 						<div className='restart-game'>

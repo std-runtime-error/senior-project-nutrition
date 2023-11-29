@@ -12,7 +12,7 @@ export default function CalorieGame() {
 	  //Returns a random int corresponding to a question that hasn't been displayed yet.
 	  //If all questions have been displayed, returns (# of questions + 1)
 	  function getRandomQuestion() {
-		if (usedQuestions.length === estimations.length)
+		if (usedQuestions.length === quizLength)
 			return estimations.length+1;
 		let x = getRandNumInRange();
 		while(usedQuestions.includes(x))
@@ -77,7 +77,7 @@ export default function CalorieGame() {
 		{id: 20, answer: 190} // 1 Doughnut
 
 	];
-
+	const quizLength = 5;
 	const [currentQuestion, setEstimationNum] = useState(getRandNumInRange(0, estimations.length));
 	const [usedQuestions, setUsedQuestions] = useState([currentQuestion]);
 	const [showScore, setShowScore] = useState(false);
@@ -151,7 +151,7 @@ export default function CalorieGame() {
 				setEstimationNum(nextQuestion);
 			}
 			setValue('');
-			if (usedQuestions.length == estimations.length) {
+			if (usedQuestions.length == quizLength) {
 				setShowScore(true);
 			}	
 			document.documentElement.style.setProperty("--explanationTransition", "0s");
@@ -162,11 +162,12 @@ export default function CalorieGame() {
 	// Restart the game
 	const restartGame = () => {
 		setEstimationNum(getRandNumInRange(0,estimations.length));
-		setUsedQuestions([currentQuestion.valueOf]); 
+		setUsedQuestions([currentQuestion]); 
 		setShowScore(false);
 		setScore(0);
 		setShowingAnswer(false);
 		setPointsAwarded(0);
+		setValue('');
 	};
 	return (
 		<div>
@@ -175,7 +176,7 @@ export default function CalorieGame() {
 				  <div>
 				  	<Progressbar className= 'question-progress-bar' progress={100} /> 
 				  <div className='score-section'>
-					You scored {score} out of {estimations.length * 10}!
+					You scored {score} out of {quizLength * 10}!
 				  </div>
 				  <br />
 				  <div className='restart-game'>
