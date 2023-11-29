@@ -5,9 +5,10 @@ function Home(){
         return (
         <div className='GameMenu'>
                 <h1 align="center">
-                        <i class="fa-solid fa-chess"></i>
-                        <br/>
-                        Game Menu</h1>
+						<div className='print-image' align='center'>
+							<img src={'img/logo.png'} width='120' height='auto'/>
+						</div>
+                        NutraByte Games</h1>
                 <div className='GameMenuList'>
                         <Link to="/SimpleQuiz" className='GameMenuButton'>Simple Quiz Game&nbsp;<i class="fa-solid fa-arrow-right fa-2xl"></i></Link>
                         <Link to="/CalorieGame" className='GameMenuButton'>Calorie Guessing Game&nbsp;<i class="fa-solid fa-arrow-right fa-2xl"></i></Link><br/>

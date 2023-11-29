@@ -212,7 +212,7 @@ export default function CalorieGame() {
 								</button>
 						</div>
 						<div className='showInput'>
-							<b>Your Input Value: {inputText} kcal</b>
+							<b>Your Input Value: {inputText} calories</b>
 						</div>
 						</div>
 						<div className='answer-explanation'>
