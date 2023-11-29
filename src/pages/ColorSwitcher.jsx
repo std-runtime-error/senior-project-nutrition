@@ -28,7 +28,7 @@ const ColorOptionB = () => {
     document.documentElement.style.setProperty("--windowBackground", "#111111");
     document.documentElement.style.setProperty("--windowBorder", "#444444");
     document.documentElement.style.setProperty("--textColor", "#eeeeee");
-    document.documentElement.style.setProperty("--buttonBackground", " #1c1c1c");
+    document.documentElement.style.setProperty("--buttonBackground", " #1e1e1e");
     document.documentElement.style.setProperty("--buttonBorder", "grey");
     document.documentElement.style.setProperty("--buttonHighlight", "#ffffff");
     document.documentElement.style.setProperty("--correctAnswer", "#287746");
