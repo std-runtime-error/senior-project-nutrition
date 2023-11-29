@@ -184,7 +184,7 @@ export default function CalorieGame() {
 							<button onClick={() => clickEnter(inputText)}>Enter</button>
 						</div>
 						<div className='showInput'>
-							<b>Your Input Value: {inputText} kcal</b>
+							<b>Your Input Value: {inputText} calories</b>
 						</div>
 						</div>
 					</React.Fragment>
