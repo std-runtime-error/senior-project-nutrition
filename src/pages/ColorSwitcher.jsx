@@ -60,7 +60,7 @@ const ColorOptionC = () => {
 };
 
 function ColorSwitcher() {  
-
+	ColorOptionA();
     return (
     <div className="ColorSwitcher">
 			<p><i class="fa-solid fa-palette fa-sm"></i>&nbsp;Theme</p>
