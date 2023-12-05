@@ -86,11 +86,11 @@ function FoodReference(props){
                     <div className="foodReferenceContents">
                         <i class="fa-solid fa-circle-info"></i> Use the following information to help you make an educated guess! 
                         <ul>
-                            <li> White rice, 1/4 Cup: 160 cal </li>
-                            <li> Sweet potato, 1 Medium: 110 cal </li>
-                            <li> Potato, 1 Potato(148g): 110 cal </li>
-                            <li> White bread, 1 Slice: 98 cal </li>
-                            <li> Doughnut, 1 Medium: 190 cal </li>
+                            <li> Oatmeal, 1 Cup: 166 cal </li>
+                            <li> flour, 1 Cup: 455 cal </li>
+                            <li> Fried rice, 1 cup: 238 cal </li>
+                            <li> Mash potato, 1 Cup: 237 cal </li>
+                            <li> Foot long sandwich: 910 cal </li>
                         </ul>
                     </div>          
                 </div>
